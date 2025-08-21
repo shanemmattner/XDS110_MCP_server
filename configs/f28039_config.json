@@ -7,7 +7,7 @@
     "firmware_min_version": "2.3.0.11"
   },
   "openocd": {
-    "executable": "/usr/local/bin/openocd",
+    "executable": "/usr/bin/openocd",
     "config_file": "configs/xds110_f28039.cfg",
     "gdb_port": 3333,
     "tcl_port": 6666,
