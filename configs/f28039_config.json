@@ -1,0 +1,46 @@
+{
+  "hardware": {
+    "debug_probe": "xds110",
+    "target_mcu": "TMS320F280039C", 
+    "usb_vendor_id": "0451",
+    "usb_product_id": "bef3",
+    "firmware_min_version": "2.3.0.11"
+  },
+  "openocd": {
+    "executable": "/usr/local/bin/openocd",
+    "config_file": "configs/xds110_f28039.cfg",
+    "gdb_port": 3333,
+    "tcl_port": 6666,
+    "telnet_port": 4444,
+    "max_connections": 3,
+    "log_level": "info"
+  },
+  "gdb": {
+    "host": "localhost",
+    "port": 3333,
+    "timeout": 5.0,
+    "retry_attempts": 3,
+    "retry_delay": 1.0
+  },
+  "target": {
+    "firmware_path": "Flash_lib_DRV8323RH_3SC/obake_firmware.out",
+    "memory_layout": {
+      "debug_bypass_base": "0x0000d3c0",
+      "debug_bypass_size": 68
+    },
+    "variable_schemas": "configs/motor_variables.json"
+  },
+  "monitoring": {
+    "default_frequency_hz": 5.0,
+    "max_frequency_hz": 10.0,
+    "change_threshold": 0.001,
+    "timeout_seconds": 30.0
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/xds110_mcp_server.log",
+    "max_bytes": 10485760,
+    "backup_count": 5
+  }
+}

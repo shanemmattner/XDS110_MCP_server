@@ -1,0 +1,133 @@
+{
+  "motor_control_variables": {
+    "state_machine": [
+      {
+        "name": "motorVars_M1.motorState",
+        "type": "uint16_t",
+        "description": "Motor state machine (0=IDLE, 1=ALIGNMENT, 2=CTRL_RUN, 3=CL_RUNNING)",
+        "enum_values": {
+          "0": "MOTOR_STOP_IDLE",
+          "1": "MOTOR_ALIGNMENT", 
+          "2": "MOTOR_CTRL_RUN",
+          "3": "MOTOR_CL_RUNNING"
+        }
+      },
+      {
+        "name": "motorVars_M1.enableSpeedCtrl",
+        "type": "bool",
+        "description": "Speed control enable flag"
+      }
+    ],
+    "position_feedback": [
+      {
+        "name": "motorVars_M1.absPosition_rad", 
+        "type": "float32_t",
+        "description": "Absolute encoder position in radians",
+        "units": "radians"
+      },
+      {
+        "name": "motorVars_M1.angleFOC_rad",
+        "type": "float32_t", 
+        "description": "Field-oriented control angle",
+        "units": "radians"
+      },
+      {
+        "name": "motorVars_M1.angleENC_rad",
+        "type": "float32_t",
+        "description": "Encoder electrical angle",
+        "units": "radians"
+      }
+    ],
+    "current_control": [
+      {
+        "name": "motorVars_M1.Idq_out_A.value[0]",
+        "type": "float32_t",
+        "description": "D-axis current command",
+        "units": "amperes"
+      },
+      {
+        "name": "motorVars_M1.Idq_out_A.value[1]", 
+        "type": "float32_t",
+        "description": "Q-axis current command",
+        "units": "amperes"
+      },
+      {
+        "name": "motorVars_M1.IsRef_A",
+        "type": "float32_t",
+        "description": "Current reference",
+        "units": "amperes"
+      },
+      {
+        "name": "motorVars_M1.fluxCurrent_A",
+        "type": "float32_t", 
+        "description": "Flux current setting",
+        "units": "amperes"
+      }
+    ],
+    "debug_bypass": [
+      {
+        "name": "debug_bypass.debug_enabled",
+        "type": "bool",
+        "description": "Debug bypass enable flag",
+        "address": "0x0000d3c0"
+      },
+      {
+        "name": "debug_bypass.command.cmd",
+        "type": "uint8_t",
+        "description": "Debug command type",
+        "address": "0x0000d3c2"
+      },
+      {
+        "name": "debug_bypass.bypass_alignment_called",
+        "type": "bool", 
+        "description": "Bypass alignment execution flag"
+      },
+      {
+        "name": "debug_bypass.bypass_electrical_angle",
+        "type": "float32_t",
+        "description": "Calculated electrical angle for bypass",
+        "units": "radians"
+      },
+      {
+        "name": "debug_bypass.cs_gpio_pin",
+        "type": "uint8_t",
+        "description": "Encoder pin selection (20=abs, 21=quad)"
+      }
+    ]
+  },
+  "memory_structures": {
+    "debug_bypass": {
+      "base_address": "0x0000d3c0",
+      "size_bytes": 68,
+      "fields": {
+        "debug_enabled": {
+          "offset": 0,
+          "size": 1,
+          "type": "bool"
+        },
+        "command": {
+          "offset": 1,
+          "size": 12,
+          "type": "obake_command_t",
+          "subfields": {
+            "addr": {"offset": 1, "size": 1, "type": "uint8_t"},
+            "cmd": {"offset": 2, "size": 1, "type": "uint8_t"},
+            "pos": {"offset": 3, "size": 2, "type": "int16_t", "encoding": "little_endian", "scale": 1000},
+            "max_current_ma": {"offset": 5, "size": 2, "type": "uint16_t", "encoding": "little_endian"},
+            "kp": {"offset": 7, "size": 2, "type": "int16_t", "encoding": "little_endian", "scale": 100},
+            "ki": {"offset": 9, "size": 2, "type": "int16_t", "encoding": "little_endian", "scale": 1000},
+            "kd": {"offset": 11, "size": 2, "type": "int16_t", "encoding": "little_endian", "scale": 1000}
+          }
+        }
+      }
+    }
+  },
+  "calibration_commands": {
+    "64": "Calibrate absolute position",
+    "65": "Calibrate torque offset", 
+    "66": "Calibrate motor ADC (extended wait)",
+    "67": "Calibrate motor direction",
+    "71": "Position control command",
+    "84": "Initialization command"
+  }
+}

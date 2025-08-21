@@ -1,0 +1,107 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xds110-mcp-server"
+version = "0.1.0"
+description = "MCP server for TI embedded systems debugging via XDS110"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "XDS110 MCP Server Contributors" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers", 
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9", 
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: System :: Hardware",
+]
+keywords = [
+    "embedded", "debugging", "ti", "xds110", "openocd", 
+    "mcp", "llm", "motor-control", "gdb"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "mcp>=1.0.0",
+    "asyncio-mqtt>=0.16.0",
+    "aiofiles>=24.1.0", 
+    "pygdbmi>=0.11.0.0",
+    "pexpect>=4.9.0",
+    "pyserial>=3.5",
+    "pyusb>=1.2.1",
+    "pyyaml>=6.0.1",
+    "colorlog>=6.8.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0", 
+    "pytest-mock>=3.12.0",
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "mypy>=1.8.0",
+]
+
+[project.scripts]
+xds110-mcp-server = "xds110_mcp_server:main"
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/XDS110_MCP_server"
+"Repository" = "https://github.com/yourusername/XDS110_MCP_server.git"
+"Bug Tracker" = "https://github.com/yourusername/XDS110_MCP_server/issues"
+"Documentation" = "https://github.com/yourusername/XDS110_MCP_server/docs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["xds110_mcp_server"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "unit: marks tests as unit tests (fast)",
+    "integration: marks tests as integration tests (slow)",
+    "hardware: marks tests that require actual hardware",
+]
