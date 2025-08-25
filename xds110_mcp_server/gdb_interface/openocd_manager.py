@@ -54,7 +54,8 @@ class OpenOCDManager:
                 "-c", f"gdb_port {self.config.gdb_port}",
                 "-c", f"tcl_port {self.config.tcl_port}",
                 "-c", f"telnet_port {self.config.telnet_port}",
-                "-c", f"gdb_max_connections {self.config.max_connections}",
+                # gdb_max_connections is not supported in OpenOCD 0.12
+                # "-c", f"gdb_max_connections {self.config.max_connections}",
             ]
             
             self.logger.info(f"Starting OpenOCD: {' '.join(cmd)}")
