@@ -1,0 +1,71 @@
+# Generic Project Configuration
+# Just point to your CCS project files - everything else is automatic!
+
+project:
+  name: "My CCS Project"
+  workspace: "~/ccs_workspace/"
+  
+  # Required files (can be auto-discovered)
+  files:
+    ccxml: "auto"  # or specific path
+    binary: "auto"  # or specific path  
+    map: "auto"     # or specific path
+
+# Variable patterns to auto-monitor (optional)
+auto_watch:
+  patterns:
+    - ".*state.*"      # Any state machines
+    - ".*error.*"      # Error flags
+    - ".*count.*"      # Counters
+    - ".*sensor.*"     # Sensor readings
+    - ".*position.*"   # Position variables
+    - ".*angle.*"      # Angle measurements
+    - ".*current.*"    # Current measurements
+    - ".*voltage.*"    # Voltage measurements
+    - ".*temperature.*"  # Temperature readings
+
+# Custom variable groups (optional)
+variable_groups:
+  critical:
+    description: "Critical system variables"
+    pattern: ".*fault.*|.*error.*|.*alarm.*"
+    
+  performance:
+    description: "Performance metrics"
+    pattern: ".*speed.*|.*frequency.*|.*rate.*"
+    
+  communication:
+    description: "Communication interfaces"
+    pattern: ".*uart.*|.*spi.*|.*i2c.*|.*can.*"
+
+# Memory regions of interest (optional - auto-discovered from MAP)
+memory_watch:
+  - name: "Stack"
+    pattern: ".*stack.*"
+  - name: "Heap"  
+    pattern: ".*heap.*"
+  - name: "DMA Buffers"
+    pattern: ".*dma.*buffer.*"
+
+# Export formats (optional)
+export:
+  formats:
+    - json
+    - csv
+    - matplotlib  # For plotting
+    - influxdb   # For time-series database
+
+# Advanced features
+features:
+  symbol_discovery: true      # Parse MAP file for all symbols
+  type_reconstruction: true   # Try to guess types from patterns
+  memory_visualization: true  # Show memory layout
+  change_detection: true     # Highlight changed values
+  pattern_learning: true     # Learn what you typically monitor
+
+# Plugins to load (optional)
+plugins:
+  - motor_control    # If working with motors
+  - pid_tuning      # For control systems
+  - protocol_decode # For communication protocols
+  - fault_analysis  # For fault detection

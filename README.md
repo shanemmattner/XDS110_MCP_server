@@ -1,30 +1,34 @@
-# XDS110 MCP Server
-## LLM Co-Debugger for TI Embedded Systems
+# XDS110 Universal Debugger - MCP Server
+## Generic Debugging Interface for ANY Texas Instruments CCS Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![MCP Protocol](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-green.svg)](https://modelcontextprotocol.io/)
+[![Platform: TI](https://img.shields.io/badge/Platform-TI%20C2000/MSP430/ARM-red.svg)]()
 
-An MCP (Model Context Protocol) server that enables Large Language Models to act as co-debuggers for Texas Instruments embedded systems. Provides real-time variable monitoring, memory manipulation, and analysis through OpenOCD proxy architecture.
+> 🚀 **Zero-configuration debugging for ANY CCS project!** Auto-discovers 1000+ variables from MAP files, no hardcoding required.
 
 ---
 
-## Functionality
+## 🎯 Overview
 
-This MCP server enables LLMs to:
+A universal debugging solution that automatically discovers and monitors variables from ANY Texas Instruments Code Composer Studio project. Using MAP file parsing and TI's Debug Server Scripting (DSS), it provides generic access to all project symbols without any manual configuration.
 
-- Monitor 50+ motor control variables simultaneously with change detection
-- Analyze root causes of motor humming, overcurrent faults, and calibration failures  
-- Write to debug structures and motor control parameters via direct memory access
-- Work alongside Code Composer Studio through session handoff
-- Provide domain expertise in motor control, FOC principles, and TI peripherals
+### ✨ Key Features
 
-### Verified Hardware Support
-- TI XDS110 Debug Probe (USB connection)
-- TMS320F280039C microcontroller (F28xx series)
-- Custom boards with XDS110 debugger integration
-- PMSM motor control via DRV8323RH driver
-- Direct memory access to union structures
+- **Zero Configuration** - Just point at your CCS project directory
+- **Auto-Discovery** - Parses MAP files to find ALL variables (1000+)
+- **Pattern Search** - Find variables using regex patterns
+- **Real-Time Monitoring** - Watch any variable change in real-time
+- **MCP Protocol** - Integrates with LLMs as debugging co-pilots
+- **Universal Support** - Works with C2000, MSP430, ARM-based TI MCUs
+
+### 🔧 Verified Hardware
+- TI XDS110 Debug Probe (and compatible)
+- TMS320F280039C (C2000 series)
+- MSP430 series (with DSS support)
+- TI ARM Cortex-M devices
+- Any CCS-supported target with MAP file generation
 
 ---
 

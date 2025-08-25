@@ -1,0 +1,4550 @@
+{
+  "summary": {
+    "map_file": "/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.map",
+    "total_symbols": 445,
+    "memory_regions": 166,
+    "motor_related": 23,
+    "debug_related": 3
+  },
+  "memory_regions": [
+    {
+      "name": "RAMM0S",
+      "origin": "0x00000128",
+      "length": "0x000002d8",
+      "used": "0x00000100",
+      "unused": "0x000001d8"
+    },
+    {
+      "name": "RAMM1D",
+      "origin": "0x00000400",
+      "length": "0x000003f8",
+      "used": "0x0000002a",
+      "unused": "0x000003ce"
+    },
+    {
+      "name": "ADCARESULT",
+      "origin": "0x00000b00",
+      "length": "0x00000018",
+      "used": "0x00000000",
+      "unused": "0x00000018"
+    },
+    {
+      "name": "ADCBRESULT",
+      "origin": "0x00000b20",
+      "length": "0x00000018",
+      "used": "0x00000000",
+      "unused": "0x00000018"
+    },
+    {
+      "name": "ADCCRESULT",
+      "origin": "0x00000b40",
+      "length": "0x00000018",
+      "used": "0x00000000",
+      "unused": "0x00000018"
+    },
+    {
+      "name": "CPUTIMER0",
+      "origin": "0x00000c00",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "CPUTIMER1",
+      "origin": "0x00000c08",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "CPUTIMER2",
+      "origin": "0x00000c10",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "PIECTRL",
+      "origin": "0x00000ce0",
+      "length": "0x0000001a",
+      "used": "0x00000000",
+      "unused": "0x0000001a"
+    },
+    {
+      "name": "PIEVECTTABLE",
+      "origin": "0x00000d00",
+      "length": "0x00000200",
+      "used": "0x00000000",
+      "unused": "0x00000200"
+    },
+    {
+      "name": "DMA",
+      "origin": "0x00001000",
+      "length": "0x00000200",
+      "used": "0x00000000",
+      "unused": "0x00000200"
+    },
+    {
+      "name": "CLA1",
+      "origin": "0x00001400",
+      "length": "0x00000080",
+      "used": "0x00000048",
+      "unused": "0x00000038"
+    },
+    {
+      "name": "CLATOCPU_MSGRAM",
+      "origin": "0x00001480",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CPUTOCLA_MSGRAM",
+      "origin": "0x00001500",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CLATODMA_MSGRAM",
+      "origin": "0x00001680",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "DMATOCLA_MSGRAM",
+      "origin": "0x00001700",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CLB1LOGICCFG",
+      "origin": "0x00003000",
+      "length": "0x00000052",
+      "used": "0x00000000",
+      "unused": "0x00000052"
+    },
+    {
+      "name": "CLB1LOGICCTRL",
+      "origin": "0x00003100",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLB1DATAEXCH",
+      "origin": "0x00003180",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CLB2LOGICCFG",
+      "origin": "0x00003400",
+      "length": "0x00000052",
+      "used": "0x00000000",
+      "unused": "0x00000052"
+    },
+    {
+      "name": "CLB2LOGICCTRL",
+      "origin": "0x00003500",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLB2DATAEXCH",
+      "origin": "0x00003580",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CLB3LOGICCFG",
+      "origin": "0x00003800",
+      "length": "0x00000052",
+      "used": "0x00000000",
+      "unused": "0x00000052"
+    },
+    {
+      "name": "CLB3LOGICCTRL",
+      "origin": "0x00003900",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLB3DATAEXCH",
+      "origin": "0x00003980",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "CLB4LOGICCFG",
+      "origin": "0x00003c00",
+      "length": "0x00000052",
+      "used": "0x00000000",
+      "unused": "0x00000052"
+    },
+    {
+      "name": "CLB4LOGICCTRL",
+      "origin": "0x00003d00",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLB4DATAEXCH",
+      "origin": "0x00003d80",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "EPWM1",
+      "origin": "0x00004000",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM2",
+      "origin": "0x00004100",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM3",
+      "origin": "0x00004200",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM4",
+      "origin": "0x00004300",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM5",
+      "origin": "0x00004400",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM6",
+      "origin": "0x00004500",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM7",
+      "origin": "0x00004600",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EPWM8",
+      "origin": "0x00004700",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "EQEP1",
+      "origin": "0x00005100",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "EQEP2",
+      "origin": "0x00005140",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "ECAP1",
+      "origin": "0x00005200",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "ECAP2",
+      "origin": "0x00005240",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "ECAP3",
+      "origin": "0x00005280",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "HRCAP3",
+      "origin": "0x000052a0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "DACA",
+      "origin": "0x00005c00",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "DACB",
+      "origin": "0x00005c10",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "CMPSS1",
+      "origin": "0x00005c80",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "CMPSS2",
+      "origin": "0x00005ca0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "CMPSS3",
+      "origin": "0x00005cc0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "CMPSS4",
+      "origin": "0x00005ce0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "SDFM1",
+      "origin": "0x00005e00",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "SDFM2",
+      "origin": "0x00005e80",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "SPIA",
+      "origin": "0x00006100",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "SPIB",
+      "origin": "0x00006110",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "BGCRCCPU",
+      "origin": "0x00006340",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "BGCRCCLA1",
+      "origin": "0x00006380",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "PMBUSA",
+      "origin": "0x00006400",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "HIC",
+      "origin": "0x00006500",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "FSITXA",
+      "origin": "0x00006600",
+      "length": "0x00000050",
+      "used": "0x00000000",
+      "unused": "0x00000050"
+    },
+    {
+      "name": "FSIRXA",
+      "origin": "0x00006680",
+      "length": "0x00000050",
+      "used": "0x00000000",
+      "unused": "0x00000050"
+    },
+    {
+      "name": "LINA",
+      "origin": "0x00006a00",
+      "length": "0x000000ec",
+      "used": "0x00000000",
+      "unused": "0x000000ec"
+    },
+    {
+      "name": "LINB",
+      "origin": "0x00006b00",
+      "length": "0x000000ec",
+      "used": "0x00000000",
+      "unused": "0x000000ec"
+    },
+    {
+      "name": "WD",
+      "origin": "0x00007000",
+      "length": "0x0000002b",
+      "used": "0x00000000",
+      "unused": "0x0000002b"
+    },
+    {
+      "name": "NMIINTRUPT",
+      "origin": "0x00007060",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "XINT",
+      "origin": "0x00007070",
+      "length": "0x0000000b",
+      "used": "0x00000000",
+      "unused": "0x0000000b"
+    },
+    {
+      "name": "SCIA",
+      "origin": "0x00007200",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "SCIB",
+      "origin": "0x00007210",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "I2CA",
+      "origin": "0x00007300",
+      "length": "0x00000022",
+      "used": "0x00000000",
+      "unused": "0x00000022"
+    },
+    {
+      "name": "I2CB",
+      "origin": "0x00007340",
+      "length": "0x00000022",
+      "used": "0x00000000",
+      "unused": "0x00000022"
+    },
+    {
+      "name": "ADCA",
+      "origin": "0x00007400",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "ADCB",
+      "origin": "0x00007480",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "ADCC",
+      "origin": "0x00007500",
+      "length": "0x00000080",
+      "used": "0x00000000",
+      "unused": "0x00000080"
+    },
+    {
+      "name": "INPUTXBAR",
+      "origin": "0x00007900",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "XBAR",
+      "origin": "0x00007920",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "SYNCSOC",
+      "origin": "0x00007940",
+      "length": "0x00000006",
+      "used": "0x00000000",
+      "unused": "0x00000006"
+    },
+    {
+      "name": "CLBINPUTXBAR",
+      "origin": "0x00007960",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "DMACLASRCSEL",
+      "origin": "0x00007980",
+      "length": "0x0000001a",
+      "used": "0x00000000",
+      "unused": "0x0000001a"
+    },
+    {
+      "name": "EPWMXBAR",
+      "origin": "0x00007a00",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLBXBAR",
+      "origin": "0x00007a40",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "OUTPUTXBAR",
+      "origin": "0x00007a80",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "CLBOUTPUTXBAR",
+      "origin": "0x00007bc0",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "GPIOCTRL",
+      "origin": "0x00007c00",
+      "length": "0x00000200",
+      "used": "0x00000000",
+      "unused": "0x00000200"
+    },
+    {
+      "name": "GPIODATA",
+      "origin": "0x00007f00",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "GPIODATAREAD",
+      "origin": "0x00007f80",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "LFU",
+      "origin": "0x00007fe0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "MEM_CLA_PRG",
+      "origin": "0x00008000",
+      "length": "0x00002000",
+      "used": "0x0000105e",
+      "unused": "0x00000fa2"
+    },
+    {
+      "name": "MEM_CLA_RAM",
+      "origin": "0x0000a000",
+      "length": "0x00002000",
+      "used": "0x000001f4",
+      "unused": "0x00001e0c"
+    },
+    {
+      "name": "RAMGS_ALL",
+      "origin": "0x0000c000",
+      "length": "0x00003ff8",
+      "used": "0x0000377e",
+      "unused": "0x0000087a"
+    },
+    {
+      "name": "CANA",
+      "origin": "0x00048000",
+      "length": "0x00000200",
+      "used": "0x00000000",
+      "unused": "0x00000200"
+    },
+    {
+      "name": "DEVCFG",
+      "origin": "0x0005d000",
+      "length": "0x000001b0",
+      "used": "0x00000000",
+      "unused": "0x000001b0"
+    },
+    {
+      "name": "CLKCFG",
+      "origin": "0x0005d200",
+      "length": "0x00000100",
+      "used": "0x00000000",
+      "unused": "0x00000100"
+    },
+    {
+      "name": "CPUSYS",
+      "origin": "0x0005d300",
+      "length": "0x000000a0",
+      "used": "0x00000000",
+      "unused": "0x000000a0"
+    },
+    {
+      "name": "SYSSTATUS",
+      "origin": "0x0005d400",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "PERIPHAC",
+      "origin": "0x0005d500",
+      "length": "0x00000200",
+      "used": "0x00000000",
+      "unused": "0x00000200"
+    },
+    {
+      "name": "ANALOGSUBSYS",
+      "origin": "0x0005d700",
+      "length": "0x00000122",
+      "used": "0x00000000",
+      "unused": "0x00000122"
+    },
+    {
+      "name": "DCC0",
+      "origin": "0x0005e700",
+      "length": "0x00000038",
+      "used": "0x00000000",
+      "unused": "0x00000038"
+    },
+    {
+      "name": "DCC1",
+      "origin": "0x0005e740",
+      "length": "0x00000038",
+      "used": "0x00000000",
+      "unused": "0x00000038"
+    },
+    {
+      "name": "ERADGLOBAL",
+      "origin": "0x0005e800",
+      "length": "0x00000014",
+      "used": "0x00000000",
+      "unused": "0x00000014"
+    },
+    {
+      "name": "ERADHWBP1",
+      "origin": "0x0005e900",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP2",
+      "origin": "0x0005e908",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP3",
+      "origin": "0x0005e910",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP4",
+      "origin": "0x0005e918",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP5",
+      "origin": "0x0005e920",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP6",
+      "origin": "0x0005e928",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP7",
+      "origin": "0x0005e930",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADHWBP8",
+      "origin": "0x0005e938",
+      "length": "0x00000008",
+      "used": "0x00000000",
+      "unused": "0x00000008"
+    },
+    {
+      "name": "ERADCOUNTER1",
+      "origin": "0x0005e980",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCOUNTER2",
+      "origin": "0x0005e990",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCOUNTER3",
+      "origin": "0x0005e9a0",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCOUNTER4",
+      "origin": "0x0005e9b0",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRCGLOBAL",
+      "origin": "0x0005ea00",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC1",
+      "origin": "0x0005ea10",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC2",
+      "origin": "0x0005ea20",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC3",
+      "origin": "0x0005ea30",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC4",
+      "origin": "0x0005ea40",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC5",
+      "origin": "0x0005ea50",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC6",
+      "origin": "0x0005ea60",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC7",
+      "origin": "0x0005ea70",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "ERADCRC8",
+      "origin": "0x0005ea80",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "EPG1",
+      "origin": "0x0005ec00",
+      "length": "0x00000050",
+      "used": "0x00000000",
+      "unused": "0x00000050"
+    },
+    {
+      "name": "EPG1MUX",
+      "origin": "0x0005ecd0",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "DCSMZ1",
+      "origin": "0x0005f000",
+      "length": "0x0000003e",
+      "used": "0x00000000",
+      "unused": "0x0000003e"
+    },
+    {
+      "name": "DCSMZ2",
+      "origin": "0x0005f080",
+      "length": "0x0000003e",
+      "used": "0x00000000",
+      "unused": "0x0000003e"
+    },
+    {
+      "name": "DCSMCOMMON",
+      "origin": "0x0005f0c0",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "MEMCFG",
+      "origin": "0x0005f400",
+      "length": "0x000000c0",
+      "used": "0x00000000",
+      "unused": "0x000000c0"
+    },
+    {
+      "name": "ACCESSPROTECTION",
+      "origin": "0x0005f500",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "MEMORYERROR",
+      "origin": "0x0005f540",
+      "length": "0x00000040",
+      "used": "0x00000000",
+      "unused": "0x00000040"
+    },
+    {
+      "name": "TESTERROR",
+      "origin": "0x0005f590",
+      "length": "0x00000010",
+      "used": "0x00000000",
+      "unused": "0x00000010"
+    },
+    {
+      "name": "FLASH0CTRL",
+      "origin": "0x0005f800",
+      "length": "0x00000182",
+      "used": "0x00000000",
+      "unused": "0x00000182"
+    },
+    {
+      "name": "FLASH0ECC",
+      "origin": "0x0005fb00",
+      "length": "0x00000028",
+      "used": "0x00000000",
+      "unused": "0x00000028"
+    },
+    {
+      "name": "DCSMZ1OTP",
+      "origin": "0x00078000",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "DCSMZ2OTP",
+      "origin": "0x00078200",
+      "length": "0x00000020",
+      "used": "0x00000000",
+      "unused": "0x00000020"
+    },
+    {
+      "name": "FLASHBANK0_BOOT",
+      "origin": "0x00080000",
+      "length": "0x00001000",
+      "used": "0x00000002",
+      "unused": "0x00000ffe"
+    },
+    {
+      "name": "FLASHBANK0_CODE",
+      "origin": "0x00081000",
+      "length": "0x0000e000",
+      "used": "0x000097e2",
+      "unused": "0x0000481e"
+    },
+    {
+      "name": "FLASHBANK0_DATA",
+      "origin": "0x0008f000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC0",
+      "origin": "0x00090000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC1",
+      "origin": "0x00091000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC2",
+      "origin": "0x00092000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC3",
+      "origin": "0x00093000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC4",
+      "origin": "0x00094000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC5",
+      "origin": "0x00095000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC6",
+      "origin": "0x00096000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC7",
+      "origin": "0x00097000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC8",
+      "origin": "0x00098000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC9",
+      "origin": "0x00099000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC10",
+      "origin": "0x0009a000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC11",
+      "origin": "0x0009b000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC12",
+      "origin": "0x0009c000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC13",
+      "origin": "0x0009d000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC14",
+      "origin": "0x0009e000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK1_SEC15",
+      "origin": "0x0009f000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC0",
+      "origin": "0x000a0000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC1",
+      "origin": "0x000a1000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC2",
+      "origin": "0x000a2000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC3",
+      "origin": "0x000a3000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC4",
+      "origin": "0x000a4000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC5",
+      "origin": "0x000a5000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC6",
+      "origin": "0x000a6000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC7",
+      "origin": "0x000a7000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC8",
+      "origin": "0x000a8000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC9",
+      "origin": "0x000a9000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC10",
+      "origin": "0x000aa000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC11",
+      "origin": "0x000ab000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC12",
+      "origin": "0x000ac000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC13",
+      "origin": "0x000ad000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC14",
+      "origin": "0x000ae000",
+      "length": "0x00001000",
+      "used": "0x00000000",
+      "unused": "0x00001000"
+    },
+    {
+      "name": "FLASH_BANK2_SEC15",
+      "origin": "0x000af000",
+      "length": "0x00000ff0",
+      "used": "0x00000000",
+      "unused": "0x00000ff0"
+    },
+    {
+      "name": "RESET",
+      "origin": "0x003fffc0",
+      "length": "0x00000002",
+      "used": "0x00000000",
+      "unused": "0x00000002"
+    }
+  ],
+  "interesting_symbols": {
+    "motor_control": [
+      {
+        "name": "CLA_motorFastControl",
+        "address": "0x00008000",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "CLA_motorFastControlData_Init",
+        "address": "0x00087b1e",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "CLA_motorFastControl_Init",
+        "address": "0x00009008",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "EST_isMotorIdentified",
+        "address": "0x000899fb",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "EST_setMotorParams",
+        "address": "0x0008995a",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "USER_setMotor1Params",
+        "address": "0x0008601f",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "calcMotorOverCurrentThreshold",
+        "address": "0x00088f8d",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "calibrate_motor_dir",
+        "address": "0x0000d78e",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "initMotor1CtrlParameters",
+        "address": "0x00085ae6",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "initMotor1Handles",
+        "address": "0x00088bee",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "loadEnd_motor_data",
+        "address": "0x0000c000",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "loadStart_motor_data",
+        "address": "0x0000c000",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "motor1CtrlISR",
+        "address": "0x0000c000",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "motorHandle_M1",
+        "address": "0x0000f400",
+        "size": 976,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "motorInitAdc",
+        "address": "0x00088a27",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "motorSetVars_M1",
+        "address": "0x0000f500",
+        "size": 980,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "motorVars_M1",
+        "address": "0x0000f580",
+        "size": 982,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "resetMotorControl",
+        "address": "0x00087d59",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "restartMotorControl",
+        "address": "0x00087f3b",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "runMotor1Control",
+        "address": "0x000854a8",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "runMotor1OffsetsCalculation",
+        "address": "0x00085148",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "runMotorMonitor",
+        "address": "0x00086438",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "stopMotorControl",
+        "address": "0x00089235",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      }
+    ],
+    "debug": [
+      {
+        "name": "HAL_enableDebugInt",
+        "address": "0x00089a51",
+        "size": 0,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "debug_bypass",
+        "address": "0x0000f2a2",
+        "size": 970,
+        "section": "",
+        "type_hint": "debug_struct"
+      },
+      {
+        "name": "debug_bypass_process",
+        "address": "0x0008982f",
+        "size": 0,
+        "section": "",
+        "type_hint": "debug_struct"
+      }
+    ],
+    "large_structures": [
+      {
+        "name": "led_states",
+        "address": "0x00089a58",
+        "size": 8809,
+        "section": "",
+        "type_hint": "enum"
+      },
+      {
+        "name": "systemVars",
+        "address": "0x0000f780",
+        "size": 990,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "led_data",
+        "address": "0x0000f740",
+        "size": 989,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "ws2812_data",
+        "address": "0x0000f750",
+        "size": 989,
+        "section": "",
+        "type_hint": "unknown"
+      },
+      {
+        "name": "motorVars_M1",
+        "address": "0x0000f580",
+        "size": 982,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "motorSetVars_M1",
+        "address": "0x0000f500",
+        "size": 980,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "enc_M1",
+        "address": "0x0000f4c0",
+        "size": 979,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "halMtr_M1",
+        "address": "0x0000f498",
+        "size": 978,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "speedcalc_M1",
+        "address": "0x0000f480",
+        "size": 978,
+        "section": "",
+        "type_hint": "motor_struct"
+      },
+      {
+        "name": "pi_Id_M1",
+        "address": "0x0000f440",
+        "size": 977,
+        "section": "",
+        "type_hint": "motor_struct"
+      }
+    ]
+  },
+  "all_symbols": {
+    "ADC_setOffsetTrimAll": {
+      "name": "ADC_setOffsetTrimAll",
+      "address": "0x0008945b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ADC_setVREF": {
+      "name": "ADC_setVREF",
+      "address": "0x000894a9",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ANGLE_GEN_init": {
+      "name": "ANGLE_GEN_init",
+      "address": "0x00089976",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ANGLE_GEN_setParams": {
+      "name": "ANGLE_GEN_setParams",
+      "address": "0x000897e4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "C": {
+      "name": "C",
+      "address": "0x0008905c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLARKE_init": {
+      "name": "CLARKE_init",
+      "address": "0x000899c3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_Main_Init": {
+      "name": "CLA_Main_Init",
+      "address": "0x00086f9d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_Start_Tasks": {
+      "name": "CLA_Start_Tasks",
+      "address": "0x00089847",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_motorFastControl": {
+      "name": "CLA_motorFastControl",
+      "address": "0x00008000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_motorFastControlData_Init": {
+      "name": "CLA_motorFastControlData_Init",
+      "address": "0x00087b1e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_motorFastControl_Init": {
+      "name": "CLA_motorFastControl_Init",
+      "address": "0x00009008",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_runRuntimeMonitoring": {
+      "name": "CLA_runRuntimeMonitoring",
+      "address": "0x00008d0e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLA_setTriggerSource": {
+      "name": "CLA_setTriggerSource",
+      "address": "0x00089346",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CLAdiv": {
+      "name": "CLAdiv",
+      "address": "0x00009044",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CMPSS_configFilterHigh": {
+      "name": "CMPSS_configFilterHigh",
+      "address": "0x000894c2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CMPSS_configFilterLow": {
+      "name": "CMPSS_configFilterLow",
+      "address": "0x000894db",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "CPUTimer_setEmulationMode": {
+      "name": "CPUTimer_setEmulationMode",
+      "address": "0x0008997c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Cla1ProgLoadStart": {
+      "name": "Cla1ProgLoadStart",
+      "address": "0x000835f4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Cla1ProgRunStart": {
+      "name": "Cla1ProgRunStart",
+      "address": "0x00008000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Cla1Regs": {
+      "name": "Cla1Regs",
+      "address": "0x00001400",
+      "size": 80,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Device_enableAllPeripherals": {
+      "name": "Device_enableAllPeripherals",
+      "address": "0x00087575",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Device_init": {
+      "name": "Device_init",
+      "address": "0x0008856d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Device_initGPIO": {
+      "name": "Device_initGPIO",
+      "address": "0x0008975b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ENC_init": {
+      "name": "ENC_init",
+      "address": "0x0008891a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ENC_setParams": {
+      "name": "ENC_setParams",
+      "address": "0x0008950d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EPWM_setEmulationMode": {
+      "name": "EPWM_setEmulationMode",
+      "address": "0x00089886",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Angle_init": {
+      "name": "EST_Angle_init",
+      "address": "0x000899c7",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_Angle_setParams": {
+      "name": "EST_Angle_setParams",
+      "address": "0x000890ad",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_Dir_init": {
+      "name": "EST_Dir_init",
+      "address": "0x00088b5d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Dir_resetHpFilters": {
+      "name": "EST_Dir_resetHpFilters",
+      "address": "0x0008976b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Dir_resetLpFilters": {
+      "name": "EST_Dir_resetLpFilters",
+      "address": "0x00089362",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Dir_setHpFilterParams": {
+      "name": "EST_Dir_setHpFilterParams",
+      "address": "0x00088322",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Dir_setLpFilterParams": {
+      "name": "EST_Dir_setLpFilterParams",
+      "address": "0x00087cd3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Dir_setParams": {
+      "name": "EST_Dir_setParams",
+      "address": "0x00089852",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Eab_init": {
+      "name": "EST_Eab_init",
+      "address": "0x000899cb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Eab_setParams": {
+      "name": "EST_Eab_setParams",
+      "address": "0x0008991b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Edq_init": {
+      "name": "EST_Edq_init",
+      "address": "0x000899cf",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Edq_setParams": {
+      "name": "EST_Edq_setParams",
+      "address": "0x000899a0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_ab_init": {
+      "name": "EST_Flux_ab_init",
+      "address": "0x000895b2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_ab_resetDerFilters": {
+      "name": "EST_Flux_ab_resetDerFilters",
+      "address": "0x0008977b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_ab_setDerFilterParams": {
+      "name": "EST_Flux_ab_setDerFilterParams",
+      "address": "0x0008836c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_ab_setParams": {
+      "name": "EST_Flux_ab_setParams",
+      "address": "0x00089868",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_dq_init": {
+      "name": "EST_Flux_dq_init",
+      "address": "0x000899d3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_dq_setParams": {
+      "name": "EST_Flux_dq_setParams",
+      "address": "0x000899a5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_init": {
+      "name": "EST_Flux_init",
+      "address": "0x0008979b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_setParams": {
+      "name": "EST_Flux_setParams",
+      "address": "0x00088184",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_setWaitTimes": {
+      "name": "EST_Flux_setWaitTimes",
+      "address": "0x00089922",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Flux_updateState": {
+      "name": "EST_Flux_updateState",
+      "address": "0x0008886e",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_Freq_init": {
+      "name": "EST_Freq_init",
+      "address": "0x000895c8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Freq_resetDerFilter": {
+      "name": "EST_Freq_resetDerFilter",
+      "address": "0x00089929",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Freq_resetLpFilter": {
+      "name": "EST_Freq_resetLpFilter",
+      "address": "0x00089930",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Freq_setDerFilterParams": {
+      "name": "EST_Freq_setDerFilterParams",
+      "address": "0x00088ee5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Freq_setLpFilterParams": {
+      "name": "EST_Freq_setLpFilterParams",
+      "address": "0x00088f0f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Freq_setParams": {
+      "name": "EST_Freq_setParams",
+      "address": "0x00088286",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Iab_init": {
+      "name": "EST_Iab_init",
+      "address": "0x000895de",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Iab_resetLpFilters": {
+      "name": "EST_Iab_resetLpFilters",
+      "address": "0x00088c1d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Iab_setLpFilterParams": {
+      "name": "EST_Iab_setLpFilterParams",
+      "address": "0x000883b6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Iab_setParams": {
+      "name": "EST_Iab_setParams",
+      "address": "0x000895f4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Idq_init": {
+      "name": "EST_Idq_init",
+      "address": "0x0008960a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Idq_resetLpFilters": {
+      "name": "EST_Idq_resetLpFilters",
+      "address": "0x000890d3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Idq_setLpFilterParams": {
+      "name": "EST_Idq_setLpFilterParams",
+      "address": "0x00088400",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Idq_setParams": {
+      "name": "EST_Idq_setParams",
+      "address": "0x000896dd",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Ls_init": {
+      "name": "EST_Ls_init",
+      "address": "0x000899d7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Ls_setParams": {
+      "name": "EST_Ls_setParams",
+      "address": "0x0008867e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Ls_setWaitTimes": {
+      "name": "EST_Ls_setWaitTimes",
+      "address": "0x00089937",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Ls_updateState": {
+      "name": "EST_Ls_updateState",
+      "address": "0x000889bd",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_OneOverDcBus_init": {
+      "name": "EST_OneOverDcBus_init",
+      "address": "0x000897aa",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_OneOverDcBus_setParams": {
+      "name": "EST_OneOverDcBus_setParams",
+      "address": "0x00088fe1",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rr_init": {
+      "name": "EST_Rr_init",
+      "address": "0x000899db",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rr_setParams": {
+      "name": "EST_Rr_setParams",
+      "address": "0x0008937e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rr_setWaitTimes": {
+      "name": "EST_Rr_setWaitTimes",
+      "address": "0x0008993e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rr_updateState": {
+      "name": "EST_Rr_updateState",
+      "address": "0x00088ac5",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_RsOnLine_init": {
+      "name": "EST_RsOnLine_init",
+      "address": "0x0008900a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_RsOnLine_setLpFilterParams": {
+      "name": "EST_RsOnLine_setLpFilterParams",
+      "address": "0x000887f5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_RsOnLine_setParams": {
+      "name": "EST_RsOnLine_setParams",
+      "address": "0x000885b3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rs_init": {
+      "name": "EST_Rs_init",
+      "address": "0x000899df",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rs_setParams": {
+      "name": "EST_Rs_setParams",
+      "address": "0x0008939a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rs_setWaitTimes": {
+      "name": "EST_Rs_setWaitTimes",
+      "address": "0x00089945",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Rs_updateState": {
+      "name": "EST_Rs_updateState",
+      "address": "0x00088af8",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_Traj_configure": {
+      "name": "EST_Traj_configure",
+      "address": "0x00086e8e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Traj_init": {
+      "name": "EST_Traj_init",
+      "address": "0x000893b6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Traj_run": {
+      "name": "EST_Traj_run",
+      "address": "0x0000d943",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Traj_setParams": {
+      "name": "EST_Traj_setParams",
+      "address": "0x000877df",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vab_init": {
+      "name": "EST_Vab_init",
+      "address": "0x000899e3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vab_setParams": {
+      "name": "EST_Vab_setParams",
+      "address": "0x000899aa",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vdq_init": {
+      "name": "EST_Vdq_init",
+      "address": "0x00089620",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vdq_resetLpFilters": {
+      "name": "EST_Vdq_resetLpFilters",
+      "address": "0x00088f39",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vdq_setLpFilterParams": {
+      "name": "EST_Vdq_setLpFilterParams",
+      "address": "0x0008844a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_Vdq_setParams": {
+      "name": "EST_Vdq_setParams",
+      "address": "0x00089703",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_checkForErrors": {
+      "name": "EST_checkForErrors",
+      "address": "0x00089a3f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_computeLmag_H": {
+      "name": "EST_computeLmag_H",
+      "address": "0x000892b2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_computePower_W": {
+      "name": "EST_computePower_W",
+      "address": "0x0008988f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_computeTorque_Nm": {
+      "name": "EST_computeTorque_Nm",
+      "address": "0x00089085",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_configureTraj": {
+      "name": "EST_configureTraj",
+      "address": "0x0008994c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_configureTrajState": {
+      "name": "EST_configureTrajState",
+      "address": "0x0000d00a",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_disable": {
+      "name": "EST_disable",
+      "address": "0x000899e7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_disableTraj": {
+      "name": "EST_disableTraj",
+      "address": "0x00089953",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_doCurrentCtrl": {
+      "name": "EST_doCurrentCtrl",
+      "address": "0x0000db21",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_doSpeedCtrl": {
+      "name": "EST_doSpeedCtrl",
+      "address": "0x0000db0b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getFASTVersion": {
+      "name": "EST_getFASTVersion",
+      "address": "0x00089a42",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getFe_rps": {
+      "name": "EST_getFe_rps",
+      "address": "0x00089982",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getFlag_bypassLockRotor": {
+      "name": "EST_getFlag_bypassLockRotor",
+      "address": "0x000899eb",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_getFlag_enable": {
+      "name": "EST_getFlag_enable",
+      "address": "0x000899ef",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_getFlag_enableRsRecalc": {
+      "name": "EST_getFlag_enableRsRecalc",
+      "address": "0x000899f3",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_getFm_lp_Hz": {
+      "name": "EST_getFm_lp_Hz",
+      "address": "0x000897c8",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_getIdRated_A": {
+      "name": "EST_getIdRated_A",
+      "address": "0x0000db34",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_getIntValue_Id_A": {
+      "name": "EST_getIntValue_Id_A",
+      "address": "0x0000db3c",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_getIntValue_spd_Hz": {
+      "name": "EST_getIntValue_spd_Hz",
+      "address": "0x0000db2b",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_getLs_d_H": {
+      "name": "EST_getLs_d_H",
+      "address": "0x000898b3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getLs_q_H": {
+      "name": "EST_getLs_q_H",
+      "address": "0x000898bb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getRoverL_rps": {
+      "name": "EST_getRoverL_rps",
+      "address": "0x000899f7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getRr_Ohm": {
+      "name": "EST_getRr_Ohm",
+      "address": "0x000898c3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getRsOnLine_Ohm": {
+      "name": "EST_getRsOnLine_Ohm",
+      "address": "0x000898cb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getRs_Ohm": {
+      "name": "EST_getRs_Ohm",
+      "address": "0x000898d3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_getState": {
+      "name": "EST_getState",
+      "address": "0x0000db51",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_getTrajState": {
+      "name": "EST_getTrajState",
+      "address": "0x000899af",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_init": {
+      "name": "EST_init",
+      "address": "0x0008771b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_initEst": {
+      "name": "EST_initEst",
+      "address": "0x00089715",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_isEnabled": {
+      "name": "EST_isEnabled",
+      "address": "0x0000db49",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_isError": {
+      "name": "EST_isError",
+      "address": "0x000898db",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_isIdle": {
+      "name": "EST_isIdle",
+      "address": "0x000898e3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_isLockRotor": {
+      "name": "EST_isLockRotor",
+      "address": "0x000898eb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_isMotorIdentified": {
+      "name": "EST_isMotorIdentified",
+      "address": "0x000899fb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_reset": {
+      "name": "EST_reset",
+      "address": "0x0008627a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_resetCounter_isr": {
+      "name": "EST_resetCounter_isr",
+      "address": "0x00089a45",
+      "size": 0,
+      "section": "",
+      "type_hint": "uint32"
+    },
+    "EST_resetCounter_state": {
+      "name": "EST_resetCounter_state",
+      "address": "0x00089a48",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_run": {
+      "name": "EST_run",
+      "address": "0x0000d4c0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_runTraj": {
+      "name": "EST_runTraj",
+      "address": "0x0000db43",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setAngle_rad": {
+      "name": "EST_setAngle_rad",
+      "address": "0x00089898",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_setBemf_sf": {
+      "name": "EST_setBemf_sf",
+      "address": "0x0008980b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setFlag_bypassLockRotor": {
+      "name": "EST_setFlag_bypassLockRotor",
+      "address": "0x000899ff",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFlag_enable": {
+      "name": "EST_setFlag_enable",
+      "address": "0x00089a03",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFlag_enableFluxControl": {
+      "name": "EST_setFlag_enableFluxControl",
+      "address": "0x00089a07",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFlag_enableForceAngle": {
+      "name": "EST_setFlag_enableForceAngle",
+      "address": "0x00089a0b",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_setFlag_enableRsOnLine": {
+      "name": "EST_setFlag_enableRsOnLine",
+      "address": "0x00089a0f",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFlag_enableRsRecalc": {
+      "name": "EST_setFlag_enableRsRecalc",
+      "address": "0x00089a13",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFlag_updateRs": {
+      "name": "EST_setFlag_updateRs",
+      "address": "0x00089a17",
+      "size": 0,
+      "section": "",
+      "type_hint": "bool"
+    },
+    "EST_setFluxBeta_lp": {
+      "name": "EST_setFluxBeta_lp",
+      "address": "0x00089033",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setFlux_ab_betaOmega_der": {
+      "name": "EST_setFlux_ab_betaOmega_der",
+      "address": "0x0008940a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setFreqBetaOmega_der": {
+      "name": "EST_setFreqBetaOmega_der",
+      "address": "0x000893d2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setFreqBeta_lp": {
+      "name": "EST_setFreqBeta_lp",
+      "address": "0x0008964c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setFreqLFP_sf": {
+      "name": "EST_setFreqLFP_sf",
+      "address": "0x000897b9",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setIab_beta_lp": {
+      "name": "EST_setIab_beta_lp",
+      "address": "0x00089661",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setId_ref_A": {
+      "name": "EST_setId_ref_A",
+      "address": "0x00089988",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_setIdq_beta_lp": {
+      "name": "EST_setIdq_beta_lp",
+      "address": "0x00089676",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setIq_ref_A": {
+      "name": "EST_setIq_ref_A",
+      "address": "0x0008998e",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "EST_setLs_d_H": {
+      "name": "EST_setLs_d_H",
+      "address": "0x000898f3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setLs_q_H": {
+      "name": "EST_setLs_q_H",
+      "address": "0x000898fb",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setMotorParams": {
+      "name": "EST_setMotorParams",
+      "address": "0x0008995a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setNumIsrTicksPerEstTick": {
+      "name": "EST_setNumIsrTicksPerEstTick",
+      "address": "0x00089a4b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setOneOverFluxGain_sf": {
+      "name": "EST_setOneOverFluxGain_sf",
+      "address": "0x00089817",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setParams": {
+      "name": "EST_setParams",
+      "address": "0x00084658",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setRr_Ohm": {
+      "name": "EST_setRr_Ohm",
+      "address": "0x00089903",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setVdq_beta_lp": {
+      "name": "EST_setVdq_beta_lp",
+      "address": "0x0008968b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setWaitTimes": {
+      "name": "EST_setWaitTimes",
+      "address": "0x00089961",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "EST_setupTrajState": {
+      "name": "EST_setupTrajState",
+      "address": "0x0000d698",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "EST_updateState": {
+      "name": "EST_updateState",
+      "address": "0x00085d9b",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "FILTER_FO_init": {
+      "name": "FILTER_FO_init",
+      "address": "0x00089a1b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "FILTER_FO_setDenCoeffs": {
+      "name": "FILTER_FO_setDenCoeffs",
+      "address": "0x00089a4e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "FILTER_FO_setInitialConditions": {
+      "name": "FILTER_FO_setInitialConditions",
+      "address": "0x00089994",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "FILTER_FO_setNumCoeffs": {
+      "name": "FILTER_FO_setNumCoeffs",
+      "address": "0x000899b4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_GlobalInit": {
+      "name": "Fapi_GlobalInit",
+      "address": "0x0000e5ee",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_WriteReadBack": {
+      "name": "Fapi_WriteReadBack",
+      "address": "0x0000e597",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_calculateFletcherChecksum": {
+      "name": "Fapi_calculateFletcherChecksum",
+      "address": "0x0000e4e2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_calculateOtpChecksum": {
+      "name": "Fapi_calculateOtpChecksum",
+      "address": "0x0000e5ce",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_checkFsmForReady": {
+      "name": "Fapi_checkFsmForReady",
+      "address": "0x0000e5c0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_checkRegionForValue": {
+      "name": "Fapi_checkRegionForValue",
+      "address": "0x0000e262",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_configureFMAC": {
+      "name": "Fapi_configureFMAC",
+      "address": "0x0000e356",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_divideUnsignedLong": {
+      "name": "Fapi_divideUnsignedLong",
+      "address": "0x0000e50e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_doBlankCheck": {
+      "name": "Fapi_doBlankCheck",
+      "address": "0x0000e1e6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_doVerify": {
+      "name": "Fapi_doVerify",
+      "address": "0x0000e5b1",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_flushPipeline": {
+      "name": "Fapi_flushPipeline",
+      "address": "0x0000e55e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_getFsmStatus": {
+      "name": "Fapi_getFsmStatus",
+      "address": "0x0000e5e6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_initializeAPI": {
+      "name": "Fapi_initializeAPI",
+      "address": "0x0000e47f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_isAddressEcc": {
+      "name": "Fapi_isAddressEcc",
+      "address": "0x0000e53a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_isAddressValid": {
+      "name": "Fapi_isAddressValid",
+      "address": "0x0000e40d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_issueBankEraseCommand": {
+      "name": "Fapi_issueBankEraseCommand",
+      "address": "0x0000e137",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_issueFsmCommand": {
+      "name": "Fapi_issueFsmCommand",
+      "address": "0x0000e3b7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_issueProgrammingCommand": {
+      "name": "Fapi_issueProgrammingCommand",
+      "address": "0x0000decf",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_loopRegionForValue": {
+      "name": "Fapi_loopRegionForValue",
+      "address": "0x0000e2dc",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_scaleCycleValues": {
+      "name": "Fapi_scaleCycleValues",
+      "address": "0x0000e5db",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_setActiveFlashBank": {
+      "name": "Fapi_setActiveFlashBank",
+      "address": "0x0000e448",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_setupBankSectorEnable": {
+      "name": "Fapi_setupBankSectorEnable",
+      "address": "0x0000e4b1",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Fapi_setupSectorsForWrite": {
+      "name": "Fapi_setupSectorsForWrite",
+      "address": "0x0000e57b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Flash_initModule": {
+      "name": "Flash_initModule",
+      "address": "0x0000d9f2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setAnalogMode": {
+      "name": "GPIO_setAnalogMode",
+      "address": "0x000885f8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setDirectionMode": {
+      "name": "GPIO_setDirectionMode",
+      "address": "0x000891f5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setPadConfig": {
+      "name": "GPIO_setPadConfig",
+      "address": "0x000886bd",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setPinConfig": {
+      "name": "GPIO_setPinConfig",
+      "address": "0x00088b8e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setQualificationMode": {
+      "name": "GPIO_setQualificationMode",
+      "address": "0x000891d3",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "GPIO_setQualificationPeriod": {
+      "name": "GPIO_setQualificationPeriod",
+      "address": "0x00089425",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_MTR1_init": {
+      "name": "HAL_MTR1_init",
+      "address": "0x00088c4b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_MTR_setGateDriver": {
+      "name": "HAL_MTR_setGateDriver",
+      "address": "0x0008978b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_MTR_setParams": {
+      "name": "HAL_MTR_setParams",
+      "address": "0x00088d30",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_clearDataRAM": {
+      "name": "HAL_clearDataRAM",
+      "address": "0x00089968",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_disableEncoderSPI": {
+      "name": "HAL_disableEncoderSPI",
+      "address": "0x0008930c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_enableCtrlInts": {
+      "name": "HAL_enableCtrlInts",
+      "address": "0x000897f1",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_enableDRV": {
+      "name": "HAL_enableDRV",
+      "address": "0x00088b2b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_enableDebugInt": {
+      "name": "HAL_enableDebugInt",
+      "address": "0x00089a51",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_enableGlobalInts": {
+      "name": "HAL_enableGlobalInts",
+      "address": "0x00089a1f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_init": {
+      "name": "HAL_init",
+      "address": "0x000889f2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setMtrCMPSSDACValue": {
+      "name": "HAL_setMtrCMPSSDACValue",
+      "address": "0x00089727",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setParams": {
+      "name": "HAL_setParams",
+      "address": "0x00089255",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setTriggerPrams": {
+      "name": "HAL_setTriggerPrams",
+      "address": "0x00089215",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupADCs": {
+      "name": "HAL_setupADCs",
+      "address": "0x00087648",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupCMPSSs": {
+      "name": "HAL_setupCMPSSs",
+      "address": "0x000870a4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupCPUUsageTimer": {
+      "name": "HAL_setupCPUUsageTimer",
+      "address": "0x00089440",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupGPIOs": {
+      "name": "HAL_setupGPIOs",
+      "address": "0x00084dd5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupI2CA": {
+      "name": "HAL_setupI2CA",
+      "address": "0x00087eca",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupMtrFaults": {
+      "name": "HAL_setupMtrFaults",
+      "address": "0x000871a8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupPWMs": {
+      "name": "HAL_setupPWMs",
+      "address": "0x00086785",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupQEP": {
+      "name": "HAL_setupQEP",
+      "address": "0x000881e0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "HAL_setupTimeBaseTimer": {
+      "name": "HAL_setupTimeBaseTimer",
+      "address": "0x00088f63",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "I2C_clearInterruptStatus": {
+      "name": "I2C_clearInterruptStatus",
+      "address": "0x00089739",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "I2C_enableInterrupt": {
+      "name": "I2C_enableInterrupt",
+      "address": "0x0008956d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "I2C_initController": {
+      "name": "I2C_initController",
+      "address": "0x00088832",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "INVERSE_init": {
+      "name": "INVERSE_init",
+      "address": "0x00089a23",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "INVERSE_setParams": {
+      "name": "INVERSE_setParams",
+      "address": "0x000898a1",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "IPARK_init": {
+      "name": "IPARK_init",
+      "address": "0x00089a27",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_defaultHandler": {
+      "name": "Interrupt_defaultHandler",
+      "address": "0x00089823",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_disable": {
+      "name": "Interrupt_disable",
+      "address": "0x00088494",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_enable": {
+      "name": "Interrupt_enable",
+      "address": "0x00088951",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_illegalOperationHandler": {
+      "name": "Interrupt_illegalOperationHandler",
+      "address": "0x00089872",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_initModule": {
+      "name": "Interrupt_initModule",
+      "address": "0x0008863d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_initVectorTable": {
+      "name": "Interrupt_initVectorTable",
+      "address": "0x000896a0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Interrupt_nmiHandler": {
+      "name": "Interrupt_nmiHandler",
+      "address": "0x0008987c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "MemCfg_setLSRAMControllerSel": {
+      "name": "MemCfg_setLSRAMControllerSel",
+      "address": "0x0008911f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_Cla1BackgroundTask": {
+      "name": "Obk_Cla1BackgroundTask",
+      "address": "0x00009028",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_Cla1Task7": {
+      "name": "Obk_Cla1Task7",
+      "address": "0x00008f46",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_Cla1_FstLoop": {
+      "name": "Obk_Cla1_FstLoop",
+      "address": "0x00008e5a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_Cla1_Halls": {
+      "name": "Obk_Cla1_Halls",
+      "address": "0x00008fa4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTask1Cntr": {
+      "name": "Obk_ClaTask1Cntr",
+      "address": "0x0000a10e",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTask1CntrHigh": {
+      "name": "Obk_ClaTask1CntrHigh",
+      "address": "0x0000a10c",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTask1CntrLow": {
+      "name": "Obk_ClaTask1CntrLow",
+      "address": "0x0000a10a",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTask2HallCntr": {
+      "name": "Obk_ClaTask2HallCntr",
+      "address": "0x0000a112",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTask7Cntr": {
+      "name": "Obk_ClaTask7Cntr",
+      "address": "0x0000a106",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "Obk_ClaTaskBgnCntr": {
+      "name": "Obk_ClaTaskBgnCntr",
+      "address": "0x0000a108",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "PARK_init": {
+      "name": "PARK_init",
+      "address": "0x00089a2b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "PI_init": {
+      "name": "PI_init",
+      "address": "0x00089a2f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SCI_clearInterruptStatus": {
+      "name": "SCI_clearInterruptStatus",
+      "address": "0x000893ee",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SCI_disableInterrupt": {
+      "name": "SCI_disableInterrupt",
+      "address": "0x00089475",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SCI_enableInterrupt": {
+      "name": "SCI_enableInterrupt",
+      "address": "0x0008948f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SCI_setConfig": {
+      "name": "SCI_setConfig",
+      "address": "0x0008918d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SPI_clearInterruptStatus": {
+      "name": "SPI_clearInterruptStatus",
+      "address": "0x000892d0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SPI_enableInterrupt": {
+      "name": "SPI_enableInterrupt",
+      "address": "0x00089525",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SPI_setBaudRate": {
+      "name": "SPI_setBaudRate",
+      "address": "0x0008985d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SPI_setConfig": {
+      "name": "SPI_setConfig",
+      "address": "0x00089274",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SVGENCURRENT_init": {
+      "name": "SVGENCURRENT_init",
+      "address": "0x00089a33",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SVGENCURRENT_setup": {
+      "name": "SVGENCURRENT_setup",
+      "address": "0x00089636",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SVGEN_init": {
+      "name": "SVGEN_init",
+      "address": "0x00089a37",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_delay": {
+      "name": "SysCtl_delay",
+      "address": "0x0000db4d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_isPLLValid": {
+      "name": "SysCtl_isPLLValid",
+      "address": "0x0008748c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_selectOscSource": {
+      "name": "SysCtl_selectOscSource",
+      "address": "0x00088d03",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_selectXTAL": {
+      "name": "SysCtl_selectXTAL",
+      "address": "0x00088779",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_selectXTALSingleEnded": {
+      "name": "SysCtl_selectXTALSingleEnded",
+      "address": "0x000892ee",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "SysCtl_setClock": {
+      "name": "SysCtl_setClock",
+      "address": "0x00086c69",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "TRAJ_init": {
+      "name": "TRAJ_init",
+      "address": "0x00089a3b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "USER_setMotor1Params": {
+      "name": "USER_setMotor1Params",
+      "address": "0x0008601f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "USER_setParams_priv": {
+      "name": "USER_setParams_priv",
+      "address": "0x00087ddf",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "XBAR_setEPWMMuxConfig": {
+      "name": "XBAR_setEPWMMuxConfig",
+      "address": "0x00088e64",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "XBAR_setOutputMuxConfig": {
+      "name": "XBAR_setOutputMuxConfig",
+      "address": "0x00089144",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_args_main": {
+      "name": "_args_main",
+      "address": "0x0008983b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_c_int00": {
+      "name": "_c_int00",
+      "address": "0x00089584",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_lock": {
+      "name": "_lock",
+      "address": "0x0000f3ec",
+      "size": 975,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_nop": {
+      "name": "_nop",
+      "address": "0x000898b2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_register_lock": {
+      "name": "_register_lock",
+      "address": "0x000898ae",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_register_unlock": {
+      "name": "_register_unlock",
+      "address": "0x000898aa",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_system_post_cinit": {
+      "name": "_system_post_cinit",
+      "address": "0x00085147",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_system_pre_init": {
+      "name": "_system_pre_init",
+      "address": "0x00089a54",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "_unlock": {
+      "name": "_unlock",
+      "address": "0x0000f3ee",
+      "size": 975,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "abort": {
+      "name": "abort",
+      "address": "0x0008905c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "angleGen_M1": {
+      "name": "angleGen_M1",
+      "address": "0x0000f426",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "apply_rotation": {
+      "name": "apply_rotation",
+      "address": "0x000882d4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "blinking_states": {
+      "name": "blinking_states",
+      "address": "0x0000f3d4",
+      "size": 975,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "bootloadDataBuffer": {
+      "name": "bootloadDataBuffer",
+      "address": "0x0000f172",
+      "size": 965,
+      "section": "",
+      "type_hint": "array"
+    },
+    "bootloadFinish": {
+      "name": "bootloadFinish",
+      "address": "0x0000d717",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "btn_down_state": {
+      "name": "btn_down_state",
+      "address": "0x0000effc",
+      "size": 959,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "btn_on_off_state": {
+      "name": "btn_on_off_state",
+      "address": "0x0000eff8",
+      "size": 959,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "btn_up_state": {
+      "name": "btn_up_state",
+      "address": "0x0000effa",
+      "size": 959,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "cal_flash_erased": {
+      "name": "cal_flash_erased",
+      "address": "0x000891b0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "calcMotorOverCurrentThreshold": {
+      "name": "calcMotorOverCurrentThreshold",
+      "address": "0x00088f8d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "calculateRMSData": {
+      "name": "calculateRMSData",
+      "address": "0x00087bbc",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "calibrate_adc_offset": {
+      "name": "calibrate_adc_offset",
+      "address": "0x0000d327",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "calibrate_angle_offset": {
+      "name": "calibrate_angle_offset",
+      "address": "0x0000d804",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "calibrate_loadcell_gain": {
+      "name": "calibrate_loadcell_gain",
+      "address": "0x0000d874",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "calibrate_motor_dir": {
+      "name": "calibrate_motor_dir",
+      "address": "0x0000d78e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "capture_raw_state_data": {
+      "name": "capture_raw_state_data",
+      "address": "0x00086d7c",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "checkCmpssOverCurrentFault": {
+      "name": "checkCmpssOverCurrentFault",
+      "address": "0x000884de",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "check_calibration_valid": {
+      "name": "check_calibration_valid",
+      "address": "0x0000d9a0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "claFastData": {
+      "name": "claFastData",
+      "address": "0x0000a000",
+      "size": 640,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "clarke_I_M1": {
+      "name": "clarke_I_M1",
+      "address": "0x0000f418",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "clarke_I_M1_CLA": {
+      "name": "clarke_I_M1_CLA",
+      "address": "0x0000a116",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "clarke_V_M1": {
+      "name": "clarke_V_M1",
+      "address": "0x0000f412",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "clarke_V_M1_CLA": {
+      "name": "clarke_V_M1_CLA",
+      "address": "0x0000a11c",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "code_start": {
+      "name": "code_start",
+      "address": "0x00080000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "collectRMSData": {
+      "name": "collectRMSData",
+      "address": "0x00088233",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "compare_float32": {
+      "name": "compare_float32",
+      "address": "0x000896b5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "controlVars": {
+      "name": "controlVars",
+      "address": "0x0000f018",
+      "size": 960,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "data_counter": {
+      "name": "data_counter",
+      "address": "0x0000f3e8",
+      "size": 975,
+      "section": "",
+      "type_hint": "uint32"
+    },
+    "debug_bypass": {
+      "name": "debug_bypass",
+      "address": "0x0000f2a2",
+      "size": 970,
+      "section": "",
+      "type_hint": "debug_struct"
+    },
+    "debug_bypass_process": {
+      "name": "debug_bypass_process",
+      "address": "0x0008982f",
+      "size": 0,
+      "section": "",
+      "type_hint": "debug_struct"
+    },
+    "ema_filter": {
+      "name": "ema_filter",
+      "address": "0x000897fe",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "encIsr": {
+      "name": "encIsr",
+      "address": "0x0000d21d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "enc_M1": {
+      "name": "enc_M1",
+      "address": "0x0000f4c0",
+      "size": 979,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "enc_M1_CLA": {
+      "name": "enc_M1_CLA",
+      "address": "0x0000a12e",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "encoder_init": {
+      "name": "encoder_init",
+      "address": "0x00088987",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "encoder_set_min_max_rad": {
+      "name": "encoder_set_min_max_rad",
+      "address": "0x000899b9",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "encoder_update": {
+      "name": "encoder_update",
+      "address": "0x0008806b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "est": {
+      "name": "est",
+      "address": "0x0000e5f4",
+      "size": 919,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "exit": {
+      "name": "exit",
+      "address": "0x0008905e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "g_active_buffer_index": {
+      "name": "g_active_buffer_index",
+      "address": "0x0000f3f4",
+      "size": 975,
+      "section": "",
+      "type_hint": "array"
+    },
+    "g_active_buffer_ptr": {
+      "name": "g_active_buffer_ptr",
+      "address": "0x0000f03e",
+      "size": 960,
+      "section": "",
+      "type_hint": "array"
+    },
+    "g_data_ready_for_processing": {
+      "name": "g_data_ready_for_processing",
+      "address": "0x0000f03c",
+      "size": 960,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "g_processed_state_data": {
+      "name": "g_processed_state_data",
+      "address": "0x0000f0c0",
+      "size": 963,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "g_raw_state_data": {
+      "name": "g_raw_state_data",
+      "address": "0x0000f080",
+      "size": 962,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "g_state_buffers": {
+      "name": "g_state_buffers",
+      "address": "0x0000f1f2",
+      "size": 967,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "globalEncoderHandle": {
+      "name": "globalEncoderHandle",
+      "address": "0x0000f3e2",
+      "size": 975,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "hal": {
+      "name": "hal",
+      "address": "0x00000402",
+      "size": 16,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "halHandle": {
+      "name": "halHandle",
+      "address": "0x00000400",
+      "size": 16,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "halMtr_M1": {
+      "name": "halMtr_M1",
+      "address": "0x0000f498",
+      "size": 978,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "halMtr_M1_CLA": {
+      "name": "halMtr_M1_CLA",
+      "address": "0x0000a166",
+      "size": 645,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "imu_ctrl_registers": {
+      "name": "imu_ctrl_registers",
+      "address": "0x0000f000",
+      "size": 960,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "imu_init": {
+      "name": "imu_init",
+      "address": "0x00088d5c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "imu_raw_data": {
+      "name": "imu_raw_data",
+      "address": "0x0000f00e",
+      "size": 960,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initMotor1CtrlParameters": {
+      "name": "initMotor1CtrlParameters",
+      "address": "0x00085ae6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initMotor1Handles": {
+      "name": "initMotor1Handles",
+      "address": "0x00088bee",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initRs485": {
+      "name": "initRs485",
+      "address": "0x0008788a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initSciCom": {
+      "name": "initSciCom",
+      "address": "0x0008739c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initSpi": {
+      "name": "initSpi",
+      "address": "0x000888a8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initSpi_imu": {
+      "name": "initSpi_imu",
+      "address": "0x000887b7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "initializeBootloader": {
+      "name": "initializeBootloader",
+      "address": "0x0000da3d",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ipark_V_M1": {
+      "name": "ipark_V_M1",
+      "address": "0x0000f402",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "ipark_V_M1_CLA": {
+      "name": "ipark_V_M1_CLA",
+      "address": "0x0000a122",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "led_data": {
+      "name": "led_data",
+      "address": "0x0000f740",
+      "size": 989,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "led_states": {
+      "name": "led_states",
+      "address": "0x00089a58",
+      "size": 8809,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "loadEnd_SFRA_F32_Data": {
+      "name": "loadEnd_SFRA_F32_Data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_ctrlfuncs": {
+      "name": "loadEnd_ctrlfuncs",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_datalog_data": {
+      "name": "loadEnd_datalog_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_dmaBuf_data": {
+      "name": "loadEnd_dmaBuf_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_est_data": {
+      "name": "loadEnd_est_data",
+      "address": "0x0000eb9c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_foc_data": {
+      "name": "loadEnd_foc_data",
+      "address": "0x0000f740",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_foc_data_cla": {
+      "name": "loadEnd_foc_data_cla",
+      "address": "0x0000a18e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_hal_data": {
+      "name": "loadEnd_hal_data",
+      "address": "0x0000042a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_motor_data": {
+      "name": "loadEnd_motor_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_sys_data": {
+      "name": "loadEnd_sys_data",
+      "address": "0x0000f79c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_user_data": {
+      "name": "loadEnd_user_data",
+      "address": "0x0000f3c2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_vibc_data": {
+      "name": "loadEnd_vibc_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadEnd_ws2812_data": {
+      "name": "loadEnd_ws2812_data",
+      "address": "0x0000f76c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_SFRA_F32_Data": {
+      "name": "loadStart_SFRA_F32_Data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_ctrlfuncs": {
+      "name": "loadStart_ctrlfuncs",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_datalog_data": {
+      "name": "loadStart_datalog_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_dmaBuf_data": {
+      "name": "loadStart_dmaBuf_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_est_data": {
+      "name": "loadStart_est_data",
+      "address": "0x0000e5f4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_foc_data": {
+      "name": "loadStart_foc_data",
+      "address": "0x0000f400",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_foc_data_cla": {
+      "name": "loadStart_foc_data_cla",
+      "address": "0x0000a116",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_hal_data": {
+      "name": "loadStart_hal_data",
+      "address": "0x00000400",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_motor_data": {
+      "name": "loadStart_motor_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_sys_data": {
+      "name": "loadStart_sys_data",
+      "address": "0x0000f780",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_user_data": {
+      "name": "loadStart_user_data",
+      "address": "0x0000f018",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_vibc_data": {
+      "name": "loadStart_vibc_data",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "loadStart_ws2812_data": {
+      "name": "loadStart_ws2812_data",
+      "address": "0x0000f740",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "load_calibration_data": {
+      "name": "load_calibration_data",
+      "address": "0x0000d8e2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_acceleration_raw_get": {
+      "name": "lsm6dsl_acceleration_raw_get",
+      "address": "0x00088ca7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_angular_rate_raw_get": {
+      "name": "lsm6dsl_angular_rate_raw_get",
+      "address": "0x00088cd5",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_gy_data_rate_set": {
+      "name": "lsm6dsl_gy_data_rate_set",
+      "address": "0x00088d88",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_gy_full_scale_set": {
+      "name": "lsm6dsl_gy_full_scale_set",
+      "address": "0x00088db4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_reset_set": {
+      "name": "lsm6dsl_reset_set",
+      "address": "0x00088de0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_status_reg_get": {
+      "name": "lsm6dsl_status_reg_get",
+      "address": "0x0008974a",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_xl_data_rate_set": {
+      "name": "lsm6dsl_xl_data_rate_set",
+      "address": "0x00088e0c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "lsm6dsl_xl_full_scale_set": {
+      "name": "lsm6dsl_xl_full_scale_set",
+      "address": "0x00088e38",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "main": {
+      "name": "main",
+      "address": "0x000899be",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "main_init": {
+      "name": "main_init",
+      "address": "0x000872a2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "main_loop": {
+      "name": "main_loop",
+      "address": "0x000868e7",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "median_filter": {
+      "name": "median_filter",
+      "address": "0x00088a91",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "memcpy": {
+      "name": "memcpy",
+      "address": "0x00089329",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "memset": {
+      "name": "memset",
+      "address": "0x0008996f",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "motor1CtrlISR": {
+      "name": "motor1CtrlISR",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "motorHandle_M1": {
+      "name": "motorHandle_M1",
+      "address": "0x0000f400",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "motorInitAdc": {
+      "name": "motorInitAdc",
+      "address": "0x00088a27",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "motorSetVars_M1": {
+      "name": "motorSetVars_M1",
+      "address": "0x0000f500",
+      "size": 980,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "motorVars_M1": {
+      "name": "motorVars_M1",
+      "address": "0x0000f580",
+      "size": 982,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "msg_buf": {
+      "name": "msg_buf",
+      "address": "0x0000f040",
+      "size": 961,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "mu_register_status_data": {
+      "name": "mu_register_status_data",
+      "address": "0x00089293",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "mu_sdad_transmission": {
+      "name": "mu_sdad_transmission",
+      "address": "0x00088eba",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "mu_spi_transfer": {
+      "name": "mu_spi_transfer",
+      "address": "0x00088526",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "park_I_M1": {
+      "name": "park_I_M1",
+      "address": "0x0000f406",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "park_I_M1_CLA": {
+      "name": "park_I_M1_CLA",
+      "address": "0x0000a126",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "park_V_M1": {
+      "name": "park_V_M1",
+      "address": "0x0000f40a",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "park_V_M1_CLA": {
+      "name": "park_V_M1_CLA",
+      "address": "0x0000a12a",
+      "size": 644,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "pi_Id_M1": {
+      "name": "pi_Id_M1",
+      "address": "0x0000f440",
+      "size": 977,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "pi_Iq_M1": {
+      "name": "pi_Iq_M1",
+      "address": "0x0000f450",
+      "size": 977,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "pi_spd_M1": {
+      "name": "pi_spd_M1",
+      "address": "0x0000f460",
+      "size": 977,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "prevEncState": {
+      "name": "prevEncState",
+      "address": "0x0000a104",
+      "size": 644,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "processCommand": {
+      "name": "processCommand",
+      "address": "0x000857f0",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "processObakeCommand": {
+      "name": "processObakeCommand",
+      "address": "0x00086a34",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "process_state_data": {
+      "name": "process_state_data",
+      "address": "0x00084a60",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "qsort": {
+      "name": "qsort",
+      "address": "0x00087935",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "readDataFromFlash": {
+      "name": "readDataFromFlash",
+      "address": "0x00089169",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "readImuSequence": {
+      "name": "readImuSequence",
+      "address": "0x00088bbe",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "resetMotorControl": {
+      "name": "resetMotorControl",
+      "address": "0x00087d59",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "resp_buf": {
+      "name": "resp_buf",
+      "address": "0x0000f118",
+      "size": 964,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "restartMotorControl": {
+      "name": "restartMotorControl",
+      "address": "0x00087f3b",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "rotationCount": {
+      "name": "rotationCount",
+      "address": "0x0000f3e0",
+      "size": 975,
+      "section": "",
+      "type_hint": "uint32"
+    },
+    "rotationMatrix": {
+      "name": "rotationMatrix",
+      "address": "0x0000f3c2",
+      "size": 975,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "rs485Obj": {
+      "name": "rs485Obj",
+      "address": "0x0000ebc0",
+      "size": 943,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "rs485Transmit": {
+      "name": "rs485Transmit",
+      "address": "0x00088a5c",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "rs485_watchdog_counter": {
+      "name": "rs485_watchdog_counter",
+      "address": "0x0000effe",
+      "size": 959,
+      "section": "",
+      "type_hint": "uint32"
+    },
+    "runEnd_ctrlfuncs": {
+      "name": "runEnd_ctrlfuncs",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "runMotor1Control": {
+      "name": "runMotor1Control",
+      "address": "0x000854a8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "runMotor1OffsetsCalculation": {
+      "name": "runMotor1OffsetsCalculation",
+      "address": "0x00085148",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "runMotorMonitor": {
+      "name": "runMotorMonitor",
+      "address": "0x00086438",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "runStart_ctrlfuncs": {
+      "name": "runStart_ctrlfuncs",
+      "address": "0x0000c000",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "sciRxIsr": {
+      "name": "sciRxIsr",
+      "address": "0x0000d408",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "sciTimerIsr": {
+      "name": "sciTimerIsr",
+      "address": "0x0000d56e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "sciTxIsr": {
+      "name": "sciTxIsr",
+      "address": "0x0000d60e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "sciUpdateFreq": {
+      "name": "sciUpdateFreq",
+      "address": "0x00087a7e",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "sensorDataTransmission": {
+      "name": "sensorDataTransmission",
+      "address": "0x0000f007",
+      "size": 960,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "set_led_state": {
+      "name": "set_led_state",
+      "address": "0x0008959b",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "setupClarke_I": {
+      "name": "setupClarke_I",
+      "address": "0x000894f4",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "setupClarke_V": {
+      "name": "setupClarke_V",
+      "address": "0x000896c9",
+      "size": 0,
+      "section": "",
+      "type_hint": "float"
+    },
+    "setupControllers": {
+      "name": "setupControllers",
+      "address": "0x00086b53",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "speedcalc_M1": {
+      "name": "speedcalc_M1",
+      "address": "0x0000f480",
+      "size": 978,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "spiIsr": {
+      "name": "spiIsr",
+      "address": "0x000880ca",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "spiIsr_imu": {
+      "name": "spiIsr_imu",
+      "address": "0x00088127",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "spiObj": {
+      "name": "spiObj",
+      "address": "0x0000ef96",
+      "size": 958,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "spiObj_imu": {
+      "name": "spiObj_imu",
+      "address": "0x0000efc0",
+      "size": 959,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "startSpiTransfer": {
+      "name": "startSpiTransfer",
+      "address": "0x00087fa2",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "startSpiTransfer_imu": {
+      "name": "startSpiTransfer_imu",
+      "address": "0x000886fc",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "stopMotorControl": {
+      "name": "stopMotorControl",
+      "address": "0x00089235",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "svgen_M1": {
+      "name": "svgen_M1",
+      "address": "0x0000f40e",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "svgencurrent_M1": {
+      "name": "svgencurrent_M1",
+      "address": "0x0000f41e",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "svgencurrent_M1_CLA": {
+      "name": "svgencurrent_M1_CLA",
+      "address": "0x0000a182",
+      "size": 646,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "systemVars": {
+      "name": "systemVars",
+      "address": "0x0000f780",
+      "size": 990,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "toggle_blink_state": {
+      "name": "toggle_blink_state",
+      "address": "0x000888e2",
+      "size": 0,
+      "section": "",
+      "type_hint": "enum"
+    },
+    "traj_spd_M1": {
+      "name": "traj_spd_M1",
+      "address": "0x0000f42e",
+      "size": 976,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "updateGlobalVariables": {
+      "name": "updateGlobalVariables",
+      "address": "0x000879db",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "update_circular_buffer": {
+      "name": "update_circular_buffer",
+      "address": "0x00088fb7",
+      "size": 0,
+      "section": "",
+      "type_hint": "array"
+    },
+    "userParams_M1": {
+      "name": "userParams_M1",
+      "address": "0x0000f2c0",
+      "size": 971,
+      "section": "",
+      "type_hint": "motor_struct"
+    },
+    "velocityElec_Hz": {
+      "name": "velocityElec_Hz",
+      "address": "0x0000f014",
+      "size": 960,
+      "section": "",
+      "type_hint": "float"
+    },
+    "writeDataToFlash": {
+      "name": "writeDataToFlash",
+      "address": "0x0000dac8",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ws2812_data": {
+      "name": "ws2812_data",
+      "address": "0x0000f750",
+      "size": 989,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ws2812_init": {
+      "name": "ws2812_init",
+      "address": "0x00088009",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ws2812_isr": {
+      "name": "ws2812_isr",
+      "address": "0x0000da83",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ws2812_set_color": {
+      "name": "ws2812_set_color",
+      "address": "0x000897d6",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    },
+    "ws2812_update": {
+      "name": "ws2812_update",
+      "address": "0x000865ea",
+      "size": 0,
+      "section": "",
+      "type_hint": "unknown"
+    }
+  }
+}
