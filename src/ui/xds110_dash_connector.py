@@ -44,9 +44,10 @@ class XDS110Interface:
             with open(map_file_path, 'r') as f:
                 content = f.read()
                 
-            # Look for GLOBAL SYMBOLS section
+            # Look for GLOBAL SYMBOLS section - TI format has "page address name"
             import re
-            symbol_pattern = re.compile(r'^\s*([0-9a-f]+)\s+(\w+)\s*$', re.MULTILINE | re.IGNORECASE)
+            # Match format: page_num  hex_address  symbol_name
+            symbol_pattern = re.compile(r'^\s*\d+\s+([0-9a-f]+)\s+(\w+)', re.MULTILINE | re.IGNORECASE)
             
             for match in symbol_pattern.finditer(content):
                 address_str, name = match.groups()
@@ -69,13 +70,16 @@ class XDS110Interface:
 // Auto-generated DSS connection script
 importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
+importPackage(Packages.java.lang);
 
-var script = new ScriptingEnvironment();
-var debugServer = script.getServer("DebugServer.1");
+// Get the Debug Server using ScriptingEnvironment.instance()
+var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
 
-// Configure and connect
-debugServer.setConfig("{ccxml_path}");
-var debugSession = debugServer.openSession(".*");
+// Configure target
+ds.setConfig("{ccxml_path}");
+
+// Open a debug session for C28x CPU1 specifically
+var debugSession = ds.openSession(".*C28xx_CPU1");
 
 // Connect to target
 debugSession.target.connect();
@@ -83,9 +87,9 @@ debugSession.target.connect();
 // Load binary if provided
 {"debugSession.memory.loadProgram('" + binary_path + "');" if binary_path else ""}
 
-// Run target
+// Run target briefly to initialize
 debugSession.target.runAsynch();
-java.lang.Thread.sleep(1000);
+Thread.sleep(1000);
 debugSession.target.halt();
 
 print("CONNECTED:SUCCESS");
@@ -136,9 +140,8 @@ print("CONNECTED:SUCCESS");
 importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
-var script = new ScriptingEnvironment();
-var debugServer = script.getServer("DebugServer.1");
-var debugSession = debugServer.openSession(".*");
+var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
+var debugSession = ds.openSession(".*C28xx_CPU1");
 
 // Read from address
 var value = debugSession.memory.readData(0, 0x{address:08X}, 32);
@@ -182,9 +185,8 @@ print("VALUE:" + value);
             "importPackage(Packages.com.ti.debug.engine.scripting);",
             "importPackage(Packages.com.ti.ccstudio.scripting.environment);",
             "",
-            "var script = new ScriptingEnvironment();",
-            "var debugServer = script.getServer('DebugServer.1');",
-            "var debugSession = debugServer.openSession('.*');",
+            "var ds = ScriptingEnvironment.instance().getServer('DebugServer.1');",
+            "var debugSession = ds.openSession('.*');",
             ""
         ]
         
@@ -285,9 +287,8 @@ print("VALUE:" + value);
 importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
-var script = new ScriptingEnvironment();
-var debugServer = script.getServer("DebugServer.1");
-var debugSession = debugServer.openSession(".*");
+var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
+var debugSession = ds.openSession(".*C28xx_CPU1");
 
 // Write value
 debugSession.memory.writeData(0, 0x{address:08X}, {int(value)}, 32);
@@ -321,9 +322,8 @@ print("WRITE:SUCCESS");
 importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
-var script = new ScriptingEnvironment();
-var debugServer = script.getServer("DebugServer.1");
-var debugSession = debugServer.openSession(".*");
+var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
+var debugSession = ds.openSession(".*C28xx_CPU1");
 
 debugSession.target.disconnect();
 """
