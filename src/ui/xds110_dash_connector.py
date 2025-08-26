@@ -65,63 +65,136 @@ class XDS110Interface:
     def connect(self, ccxml_path: str, binary_path: Optional[str] = None) -> bool:
         """Connect to target using CCXML configuration"""
         
-        # Create JavaScript for DSS to connect
+        # Create JavaScript for DSS to connect with better error handling
         js_script = f"""
-// Auto-generated DSS connection script
+// Auto-generated DSS connection script with debug output
 importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 importPackage(Packages.java.lang);
 
-// Get the Debug Server using ScriptingEnvironment.instance()
-var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
+function main() {{
+    print("=== Dashboard DSS Connection ===");
+    
+    var debugSession = null;
+    
+    try {{
+        // Get the Debug Server
+        print("Getting debug server...");
+        var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
+        
+        // Configure target
+        print("Setting CCXML: {ccxml_path}");
+        ds.setConfig("{ccxml_path}");
+        
+        // Open session with multiple attempts
+        print("Opening debug session...");
+        
+        // Method 1: Try two-parameter form like working script
+        try {{
+            debugSession = ds.openSession("*", "C28xx_CPU1");
+            print("SUCCESS: Opened session with C28xx_CPU1");
+        }} catch (e) {{
+            print("FAILED: Could not open C28xx_CPU1: " + e.message);
+            
+            // Method 2: Try wildcard
+            try {{
+                debugSession = ds.openSession("*");
+                print("SUCCESS: Opened session with wildcard");
+            }} catch (e2) {{
+                print("FAILED: Could not open with wildcard: " + e2.message);
+                throw new Error("Cannot open any debug session");
+            }}
+        }}
+        
+        // Connect to target
+        print("Connecting to target...");
+        debugSession.target.connect();
+        print("SUCCESS: Connected to target");
+        
+        // Load binary if provided
+        {"print('Loading binary: " + binary_path + "');" if binary_path else ""}
+        {"debugSession.memory.loadProgram('" + binary_path + "');" if binary_path else ""}
+        {"print('SUCCESS: Binary loaded');" if binary_path else ""}
+        
+        // Run briefly to initialize
+        print("Running target for initialization...");
+        debugSession.target.runAsynch();
+        Thread.sleep(2000);  // Increased wait time
+        debugSession.target.halt();
+        print("SUCCESS: Target halted after initialization");
+        
+        // Check if target is responsive
+        var status = debugSession.target.isConnected();
+        print("Target connected status: " + status);
+        
+        print("CONNECTED:SUCCESS");
+        
+    }} catch (error) {{
+        print("ERROR: " + error.message);
+        if (error.javaException) {{
+            print("Java Exception: " + error.javaException);
+        }}
+        throw error;
+    }}
+}}
 
-// Configure target
-ds.setConfig("{ccxml_path}");
-
-// Open a debug session for C28x CPU1 specifically (using two-parameter form)
-var debugSession = ds.openSession("*", "C28xx_CPU1");
-
-// Connect to target
-debugSession.target.connect();
-
-// Load binary if provided
-{"debugSession.memory.loadProgram('" + binary_path + "');" if binary_path else ""}
-
-// Run target briefly to initialize
-debugSession.target.runAsynch();
-Thread.sleep(1000);
-debugSession.target.halt();
-
-print("CONNECTED:SUCCESS");
+// Call main function
+main();
 """
         
         # Save script temporarily
-        script_path = Path("/tmp/connect_xds110.js")
+        script_path = Path("/tmp/connect_xds110_debug.js")
         script_path.write_text(js_script)
+        logger.info(f"Created DSS script: {script_path}")
         
-        try:
-            # Execute DSS script
-            result = subprocess.run(
-                [str(self.dss_path), str(script_path)],
-                capture_output=True,
-                text=True,
-                timeout=10
-            )
+        # Try connection with retries
+        max_retries = 3
+        for attempt in range(max_retries):
+            logger.info(f"Connection attempt {attempt + 1}/{max_retries}")
             
-            if "CONNECTED:SUCCESS" in result.stdout:
-                self.connected = True
-                logger.info("Successfully connected to XDS110")
-                return True
-            else:
-                logger.error(f"Connection failed: {result.stderr}")
-                return False
+            try:
+                # Execute DSS script with longer timeout
+                result = subprocess.run(
+                    [str(self.dss_path), str(script_path)],
+                    capture_output=True,
+                    text=True,
+                    timeout=30  # Increased timeout
+                )
                 
-        except subprocess.TimeoutExpired:
-            logger.error("Connection timeout")
-            return False
-        except Exception as e:
-            logger.error(f"Connection error: {e}")
-            return False
+                # Log all output for debugging
+                logger.info("DSS stdout:")
+                for line in result.stdout.split('\n'):
+                    if line.strip():
+                        logger.info(f"  {line}")
+                
+                if result.stderr:
+                    logger.warning("DSS stderr:")
+                    for line in result.stderr.split('\n'):
+                        if line.strip():
+                            logger.warning(f"  {line}")
+                
+                if "CONNECTED:SUCCESS" in result.stdout:
+                    self.connected = True
+                    logger.info("✅ Successfully connected to XDS110")
+                    return True
+                elif "ERROR:" in result.stdout:
+                    logger.error("DSS script reported error - retrying...")
+                    continue
+                else:
+                    logger.warning(f"Unexpected DSS output - attempt {attempt + 1}")
+                    
+            except subprocess.TimeoutExpired:
+                logger.error(f"Connection timeout on attempt {attempt + 1}")
+                if attempt == max_retries - 1:
+                    logger.error("All connection attempts timed out")
+                    return False
+                continue
+            except Exception as e:
+                logger.error(f"Connection error on attempt {attempt + 1}: {e}")
+                continue
+        
+        logger.error("Failed to connect after all attempts")
+        return False
     
     def read_variable(self, variable_name: str) -> Optional[float]:
         """Read a single variable from target"""
