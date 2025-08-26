@@ -78,8 +78,8 @@ var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
 // Configure target
 ds.setConfig("{ccxml_path}");
 
-// Open a debug session for C28x CPU1 specifically
-var debugSession = ds.openSession(".*C28xx_CPU1");
+// Open a debug session for C28x CPU1 specifically (using two-parameter form)
+var debugSession = ds.openSession("*", "C28xx_CPU1");
 
 // Connect to target
 debugSession.target.connect();
@@ -141,7 +141,7 @@ importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
 var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
-var debugSession = ds.openSession(".*C28xx_CPU1");
+var debugSession = ds.openSession("*", "C28xx_CPU1");
 
 // Read from address
 var value = debugSession.memory.readData(0, 0x{address:08X}, 32);
@@ -288,7 +288,7 @@ importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
 var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
-var debugSession = ds.openSession(".*C28xx_CPU1");
+var debugSession = ds.openSession("*", "C28xx_CPU1");
 
 // Write value
 debugSession.memory.writeData(0, 0x{address:08X}, {int(value)}, 32);
@@ -323,7 +323,7 @@ importPackage(Packages.com.ti.debug.engine.scripting);
 importPackage(Packages.com.ti.ccstudio.scripting.environment);
 
 var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
-var debugSession = ds.openSession(".*C28xx_CPU1");
+var debugSession = ds.openSession("*", "C28xx_CPU1");
 
 debugSession.target.disconnect();
 """
