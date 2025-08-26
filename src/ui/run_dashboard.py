@@ -13,8 +13,8 @@ import sys
 import logging
 from datetime import datetime
 
-# Import our connector
-from xds110_dash_connector import (
+# Import our legacy dashboard connector (uses proven working legacy scripts)
+from legacy_dash_connector import (
     initialize_hardware, 
     get_available_variables,
     start_monitoring,
