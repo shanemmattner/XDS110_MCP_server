@@ -1,0 +1,73 @@
+# Dockerfile for XDS110 MCP Server with USB/IP support
+FROM ubuntu:22.04
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3.10 \
+    python3-pip \
+    git \
+    curl \
+    wget \
+    # USB tools
+    usbutils \
+    linux-tools-generic \
+    kmod \
+    # Required for TI tools
+    libusb-1.0-0 \
+    libusb-1.0-0-dev \
+    # Debugging tools
+    gdb \
+    strace \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install USB/IP tools (may need to be installed in privileged container)
+RUN apt-get update && apt-get install -y \
+    linux-tools-virtual \
+    hwdata \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy Python requirements first for better caching
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Copy the entire project
+COPY . .
+
+# Create entrypoint script for USB/IP setup
+RUN echo '#!/bin/bash\n\
+echo "=== XDS110 Docker Container Starting ==="\n\
+echo "Checking for USB/IP module..."\n\
+if ! lsmod | grep -q vhci_hcd; then\n\
+    echo "Loading vhci-hcd module..."\n\
+    modprobe vhci-hcd || echo "Warning: Could not load vhci-hcd module"\n\
+fi\n\
+\n\
+echo "Checking for XDS110 device..."\n\
+lsusb | grep -i "0451:bef3" || echo "XDS110 not detected via lsusb"\n\
+\n\
+# Check if running in privileged mode\n\
+if [ -w /sys ]; then\n\
+    echo "Running in privileged mode - USB access available"\n\
+else\n\
+    echo "Warning: Not running in privileged mode - USB access may be limited"\n\
+fi\n\
+\n\
+# List any ttyACM devices\n\
+echo "Checking for ttyACM devices..."\n\
+ls -la /dev/ttyACM* 2>/dev/null || echo "No ttyACM devices found"\n\
+\n\
+# Execute the main command\n\
+exec "$@"' > /entrypoint.sh && chmod +x /entrypoint.sh
+
+# Expose MCP server port
+EXPOSE 3000
+
+# Set entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Default command - run in test mode first
+CMD ["python3", "test_mcp_server.py"]

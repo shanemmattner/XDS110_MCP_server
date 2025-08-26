@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-XDS110 MCP Server enables LLMs to act as co-debuggers for Texas Instruments embedded systems, providing real-time variable monitoring, memory manipulation, and motor control analysis through OpenOCD proxy architecture.
+XDS110 MCP Server enables LLMs to act as co-debuggers for Texas Instruments embedded systems, providing real-time variable monitoring, memory manipulation, and motor control analysis. The server auto-discovers 1000+ variables from CCS MAP files, requiring zero manual configuration.
 
-**Key Hardware**: TI XDS110 Debug Probe + TMS320F280039C microcontroller + PMSM motor control
+**Key Hardware**: TI XDS110 Debug Probe + TMS320F280039C microcontroller (C2000 series) + DRV8323RH motor driver
 
 ## Commands
 
@@ -32,86 +32,88 @@ black xds110_mcp_server/
 mypy xds110_mcp_server/
 ```
 
-### Hardware Connection (TI DSS - Working Method)
+### Hardware Connection
 
 ```bash
 # Check XDS110 detection
 lsusb | grep "0451:bef3"
-# Expected: Bus 003 Device 026: ID 0451:bef3 Texas Instruments, Inc.
+# Expected: Bus XXX Device XXX: ID 0451:bef3 Texas Instruments, Inc.
 
-# Connect and read variables using TI DSS (WORKING)
+# Connect using TI DSS (WORKING METHOD)
 cd legacy_ti_debugger
 /opt/ti/ccs1240/ccs/ccs_base/scripting/bin/dss.sh js_scripts/connect_target_v2.js
+
+# Read motor variables (firmware must be loaded)
 /opt/ti/ccs1240/ccs/ccs_base/scripting/bin/dss.sh js_scripts/read_motor_vars_v1.js
+
+# Check initialization state (loads firmware and reads values)
+/opt/ti/ccs1240/ccs/ccs_base/scripting/bin/dss.sh js_scripts/check_init_state.js
 ```
 
-### ⚠️ CRITICAL: OpenOCD Does NOT Work with C2000
-```bash
-# DO NOT USE - OpenOCD cannot debug TI C2000/C28x MCUs
-# openocd -f configs/xds110_f28039.cfg  # Will fail with "Unknown target type c2000"
-```
+### ⚠️ CRITICAL: OpenOCD Cannot Debug C2000/C28x
+OpenOCD does NOT support TI's proprietary C28x DSP architecture. Must use TI Debug Server Scripting (DSS) instead.
 
 ## Architecture
 
 ### Core Components
 
-1. **MCP Server** (`xds110_mcp_server/server.py`): Main server handling MCP protocol, tool registration, and orchestration
-2. **OpenOCD Manager** (`gdb_interface/openocd_manager.py`): Manages OpenOCD process for multi-client debugging
-3. **GDB Client** (`gdb_interface/gdb_client.py`): Communicates with target via GDB protocol
-4. **Motor Knowledge** (`knowledge/motor_control.py`): Domain expertise for motor control, FOC principles, fault patterns
+1. **MCP Server** (`xds110_mcp_server/server.py`): Main server handling MCP protocol and tool orchestration
+2. **TI DSS Interface** (`legacy_ti_debugger/framework/ti_dss_adapter.py`): Manages DSS JavaScript execution
+3. **DSS Scripts** (`legacy_ti_debugger/js_scripts/`): JavaScript scripts for C28x debugging
+4. **Motor Knowledge** (`xds110_mcp_server/knowledge/motor_control.py`): Domain expertise for motor control
+5. **Generic CCS Support** (`src/generic/`): MAP file parser for auto-discovery of variables
 
-### MCP Tools Implementation
+### MCP Tools Available
 
-- **Variable Monitor** (`tools/variable_monitor.py`): Read/monitor motor control variables with change detection
-- **Memory Tools** (`tools/memory_tools.py`): Direct memory read/write to debug_bypass structure (0x0000d3c0)
-- **Analysis Tools** (`tools/analysis_tools.py`): AI-powered motor state analysis and fault diagnosis
+- **Variable Monitor** (`tools/variable_monitor.py`): Read/monitor ANY CCS project variables
+- **Memory Tools** (`tools/memory_tools.py`): Direct memory read/write operations
+- **Analysis Tools** (`tools/analysis_tools.py`): AI-powered motor state analysis
+- **MAP Parser** (`src/generic/map_parser_poc.py`): Auto-discovers variables from CCS MAP files
 
-### Critical Memory Addresses
+### Key Variable Structures
 
-- `0x0000d3c0`: debug_bypass structure base address
-- Motor state variables accessed via motorVars_M1 structure
-- Union structures require special handling for field access
+- **motorVars_M1**: Main motor control structure (requires firmware load)
+  - `.absPosition_rad`: Absolute position in radians
+  - `.motorState`: Current motor state (0=IDLE, 1=ALIGNMENT, 2=CTRL_RUN, 3=CL_RUNNING)
+  - `.Idq_out_A.value[0/1]`: D/Q axis currents
+- **debug_bypass** (0x0000d3c0): Debug override structure (if present in firmware)
 
-## Development Status
+## Working Components
 
-### Working Components (from legacy_ti_debugger/)
-- ✅ Hardware connection via TI DSS (NOT OpenOCD)
-- ✅ Successfully reading motor control variables
-- ✅ Motor control variable schemas and relationships
-- ✅ CCXML configuration from Obake firmware
-- ✅ DSS JavaScript scripts for C28x debugging
-- Debug_bypass structure manipulation (needs firmware verification)
-- Calibration sequences (commands 64-67)
+### ✅ Verified Working
+- Hardware connection via TI DSS to TMS320F280039C
+- Reading motor control variables with non-zero values
+- CCXML configuration from Obake firmware
+- DSS JavaScript scripts for C28x debugging
+- MAP file parsing for variable auto-discovery
 
-### CRITICAL DISCOVERY (2025-08-25)
-**OpenOCD does NOT support TI C2000/C28x MCUs**. Must use TI Debug Server Scripting (DSS) instead.
-- Required: Code Composer Studio installation at `/opt/ti/ccs1240/`
-- Working path: `legacy_ti_debugger/` with DSS JavaScript scripts
-- See `DEBUGGING_SETUP_GUIDE.md` for complete setup instructions
+### ⚠️ Critical Requirements
+- **CCS Installation**: Required at `/opt/ti/ccs1240/`
+- **Firmware Loading**: motorVars_M1 only exists after loading firmware
+- **DSS Only**: OpenOCD cannot debug C2000/C28x - use TI DSS exclusively
 
 ### In Progress
-- Migrating from OpenOCD to TI DSS for MCP server
-- Full MCP protocol implementation with DSS backend
-- Real-time variable monitoring with sub-100ms latency
-- Session handoff with Code Composer Studio
+- Full MCP server implementation with DSS backend
+- Plotly Dash UI for real-time visualization
+- Generic CCS project support via MAP file parsing
 
 ## Motor Control Domain Knowledge
 
-### Key Motor States
-- IDLE (0): Motor stopped
-- ALIGNMENT (1): Bypass alignment procedure  
-- CTRL_RUN (2): Control initialization
-- CL_RUNNING (3): Closed-loop running
+### Motor States
+- **IDLE (0)**: Motor stopped, ready for commands
+- **ALIGNMENT (1)**: Initial rotor alignment procedure
+- **CTRL_RUN (2)**: Control loop initialization
+- **CL_RUNNING (3)**: Closed-loop operation
 
-### Common Issues & Solutions
-- **Motor Humming**: Missing current control initialization in bypass alignment
-- **Overcurrent Faults**: Check current limits and calibration values
-- **Position Errors**: Verify encoder calibration (commands 64-67)
+### Common Debugging Patterns
+- **Motor Humming**: Check Idq_out_A values, verify current control initialization
+- **Zero Variables**: Ensure firmware is loaded before reading motorVars_M1
+- **Connection Issues**: Only one DSS session allowed, close CCS if running
 
-## Future Enhancements
+## UI Architecture
 
-Planned Plotly Dash dashboard for real-time visualization:
-- Live motor state plots and 3D position visualization
-- Interactive parameter tuning interface
-- Code viewer with breakpoint integration
-- Complete IDE replacement capability
+Plotly Dash interface (`src/ui/`):
+- Real-time variable monitoring dashboard
+- Interactive 3D motor position visualization
+- MCP-Dash bridge for LLM interaction
+- WebSocket support for live updates

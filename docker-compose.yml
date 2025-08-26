@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # XDS110 MCP Server with USB support
+  xds110-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.xds110
+    image: xds110-mcp:latest
+    container_name: xds110-mcp-server
+    
+    # Required for USB access
+    privileged: true
+    
+    # Mount USB devices
+    volumes:
+      # USB bus access
+      - /dev/bus/usb:/dev/bus/usb
+      # Serial devices (if XDS110 shows as ttyACM)
+      - /dev:/dev
+      # Project files for development
+      - ./xds110_mcp_server:/app/xds110_mcp_server
+      - ./legacy_ti_debugger:/app/legacy_ti_debugger
+      - ./src:/app/src
+      - ./configs:/app/configs
+      
+    # Network mode for USB/IP
+    network_mode: host
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MOCK_MODE=false
+      - DEBUG_LEVEL=INFO
+      - XDS110_VENDOR_ID=0451
+      - XDS110_PRODUCT_ID=bef3
+      
+    # Ports (if not using host network)
+    # ports:
+    #   - "3000:3000"
+    
+    # Keep container running
+    stdin_open: true
+    tty: true
+    
+    # Override command for testing
+    command: ["bash"]
+
+  # Optional: USB/IP helper container
+  usbip-helper:
+    image: alpine:latest
+    container_name: usbip-helper
+    privileged: true
+    pid: host
+    network_mode: host
+    volumes:
+      - /dev:/dev
+      - /sys:/sys
+    command: |
+      sh -c "
+      apk add --no-cache usbutils linux-tools-virt || true
+      echo 'USB/IP helper ready'
+      echo 'To attach XDS110:'
+      echo '  1. List devices: usbip list -r host.docker.internal'
+      echo '  2. Attach: usbip attach -r host.docker.internal -b BUS-ID'
+      sleep infinity
+      "
