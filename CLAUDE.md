@@ -50,6 +50,16 @@ cd legacy_ti_debugger
 /opt/ti/ccs1240/ccs/ccs_base/scripting/bin/dss.sh js_scripts/check_init_state.js
 ```
 
+### Dashboard Interface
+
+```bash
+# Start dashboard with legacy connector (WORKING SOLUTION)
+cd src/ui
+python3 run_dashboard.py --ccxml "/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/TMS320F280039C_LaunchPad.ccxml" --map "/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.map" --binary "/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.out" --port 8051
+
+# Access dashboard at http://localhost:8051
+```
+
 ### ⚠️ CRITICAL: OpenOCD Cannot Debug C2000/C28x
 OpenOCD does NOT support TI's proprietary C28x DSP architecture. Must use TI Debug Server Scripting (DSS) instead.
 
@@ -62,6 +72,14 @@ OpenOCD does NOT support TI's proprietary C28x DSP architecture. Must use TI Deb
 3. **DSS Scripts** (`legacy_ti_debugger/js_scripts/`): JavaScript scripts for C28x debugging
 4. **Motor Knowledge** (`xds110_mcp_server/knowledge/motor_control.py`): Domain expertise for motor control
 5. **Generic CCS Support** (`src/generic/`): MAP file parser for auto-discovery of variables
+6. **Dashboard Interface** (`src/ui/`): Plotly Dash web interface for real-time monitoring
+
+### Dashboard Components (NEW)
+
+- **Legacy Loop Connector** (`src/ui/legacy_loop_connector.py`): Uses proven legacy DSS scripts for continuous monitoring
+- **Legacy Dashboard Connector** (`src/ui/legacy_dash_connector.py`): Dashboard interface using legacy connector
+- **Dashboard Runner** (`src/ui/run_dashboard.py`): Main dashboard application with Plotly Dash UI
+- **Alternative Connectors**: Single-session and unified connectors for different approaches
 
 ### MCP Tools Available
 
@@ -82,20 +100,31 @@ OpenOCD does NOT support TI's proprietary C28x DSP architecture. Must use TI Deb
 
 ### ✅ Verified Working
 - Hardware connection via TI DSS to TMS320F280039C
-- Reading motor control variables with non-zero values
+- Reading motor control variables with real values
 - CCXML configuration from Obake firmware
 - DSS JavaScript scripts for C28x debugging
-- MAP file parsing for variable auto-discovery
+- MAP file parsing for variable auto-discovery (924 variables discovered)
+- Dashboard interface at http://localhost:8051 with legacy connector
+- Real-time variable monitoring using legacy DSS script pattern
+- Battery-connected encoder reading position data
 
 ### ⚠️ Critical Requirements
 - **CCS Installation**: Required at `/opt/ti/ccs1240/`
 - **Firmware Loading**: motorVars_M1 only exists after loading firmware
 - **DSS Only**: OpenOCD cannot debug C2000/C28x - use TI DSS exclusively
+- **Single DSS Session**: Each variable read cycle must use complete connect+read+disconnect pattern
 
-### In Progress
-- Full MCP server implementation with DSS backend
-- Plotly Dash UI for real-time visualization
-- Generic CCS project support via MAP file parsing
+### Working Dashboard Architecture
+- **Legacy Script Pattern**: Each monitoring cycle runs complete DSS script (connect→read→disconnect)
+- **Variable Discovery**: 924 variables auto-discovered from MAP file
+- **Real Data Confirmed**: Successfully reading motorVars_M1.motorState, absPosition_rad, and Idq_out_A values
+- **UI Interface**: Full Plotly Dash interface with variable selection, real-time plotting, and monitoring controls
+
+### Known Issues & Solutions
+- **DSS Session Persistence**: Cross-process variable reads fail - solved by using complete script cycles
+- **Variable Name Resolution**: Structured variables (e.g., motorVars_M1.motorState) require base variable in MAP
+- **Monitoring Rate**: Limited to ~2Hz for reliable DSS script execution
+- **Variable Visibility**: Dashboard shows base variables from MAP, structured access requires manual entry
 
 ## Motor Control Domain Knowledge
 
@@ -109,6 +138,7 @@ OpenOCD does NOT support TI's proprietary C28x DSP architecture. Must use TI Deb
 - **Motor Humming**: Check Idq_out_A values, verify current control initialization
 - **Zero Variables**: Ensure firmware is loaded before reading motorVars_M1
 - **Connection Issues**: Only one DSS session allowed, close CCS if running
+- **Variable Not Found**: Check if base variable exists in MAP file for structured variables
 
 ## UI Architecture
 
@@ -117,3 +147,18 @@ Plotly Dash interface (`src/ui/`):
 - Interactive 3D motor position visualization
 - MCP-Dash bridge for LLM interaction
 - WebSocket support for live updates
+- Legacy DSS script integration for reliable data
+
+### Current Status (Latest Update)
+- **Dashboard**: ✅ Running on port 8051
+- **Hardware**: ✅ Connected with XDS110 + TMS320F280039C
+- **Variables**: ✅ 924 variables discovered from MAP
+- **Data Flow**: ✅ Real motor data confirmed via legacy scripts
+- **Battery**: ✅ Connected for encoder position reading
+- **Issue**: Dashboard variable dropdown not showing motorVars_M1 or debug_bypass (investigation needed)
+
+## Next Steps
+- Debug variable visibility in dashboard dropdown
+- Verify structured variable name handling in UI
+- Test real-time monitoring with battery-connected encoder
+- Optimize monitoring rate and error handling

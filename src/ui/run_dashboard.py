@@ -114,8 +114,21 @@ def update_variable_list(n):
     variables = get_available_variables()
     
     if variables:
-        options = [{'label': var, 'value': var} for var in sorted(variables)[:100]]  # Limit to first 100
-        status = f"✅ Connected - {len(variables)} variables available"
+        # Prioritize important motor and debug variables
+        priority_vars = [
+            'motorVars_M1', 'motorHandle_M1', 'debug_bypass', 
+            'motor1_drive', 'motor_common'
+        ]
+        
+        # Start with priority variables that exist
+        selected_vars = [v for v in priority_vars if v in variables]
+        
+        # Add remaining variables up to 100 total, avoiding duplicates
+        remaining_vars = [v for v in sorted(variables) if v not in selected_vars]
+        selected_vars.extend(remaining_vars[:100-len(selected_vars)])
+        
+        options = [{'label': var, 'value': var} for var in selected_vars]
+        status = f"✅ Connected - {len(variables)} variables available (showing {len(selected_vars)} in dropdown)"
         return options, options, status
     else:
         return [], [], "❌ Not connected"
