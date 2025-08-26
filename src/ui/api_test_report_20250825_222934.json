@@ -1,0 +1,164 @@
+{
+  "test_start": "2025-08-25T22:29:03.151379",
+  "api_health": true,
+  "hardware_connection": true,
+  "variable_discovery": {
+    "total_count": 447,
+    "sample_variables": [
+      "ADC_setOffsetTrimAll",
+      "ADC_setVREF",
+      "ANGLE_GEN_init",
+      "ANGLE_GEN_setParams",
+      "C",
+      "CLARKE_init",
+      "CMPSS_configFilterHigh",
+      "CMPSS_configFilterLow",
+      "CPUTimer_setEmulationMode",
+      "Device_enableAllPeripherals",
+      "Device_init",
+      "Device_initGPIO",
+      "ENC_init",
+      "ENC_setParams",
+      "EPWM_setEmulationMode",
+      "EST_Angle_init",
+      "EST_Angle_setParams",
+      "EST_Dir_init",
+      "EST_Dir_resetHpFilters",
+      "EST_Dir_resetLpFilters"
+    ]
+  },
+  "category_tests": {
+    "debug": {
+      "variables_found": 5,
+      "variables_tested": [
+        "HAL_enableDebugInt",
+        "debug_bypass",
+        "debug_bypass_process",
+        "EST_getFlag_bypassLockRotor",
+        "EST_setFlag_bypassLockRotor"
+      ],
+      "successful_reads": {
+        "HAL_enableDebugInt": 0.0,
+        "debug_bypass": 4660,
+        "debug_bypass_process": 0.0,
+        "EST_getFlag_bypassLockRotor": 0.0,
+        "EST_setFlag_bypassLockRotor": 0.0
+      },
+      "failed_reads": {}
+    },
+    "motor": {
+      "variables_found": 22,
+      "variables_tested": [
+        "EST_isMotorIdentified",
+        "EST_setMotorParams",
+        "USER_setMotor1Params",
+        "calcMotorOverCurrentThreshold",
+        "calibrate_motor_dir"
+      ],
+      "successful_reads": {
+        "EST_isMotorIdentified": 0.0,
+        "EST_setMotorParams": 0.0,
+        "USER_setMotor1Params": 0.0,
+        "calcMotorOverCurrentThreshold": 0.0,
+        "calibrate_motor_dir": 0.0
+      },
+      "failed_reads": {}
+    },
+    "calibration": {
+      "variables_found": 7,
+      "variables_tested": [
+        "calibrate_adc_offset",
+        "calibrate_angle_offset",
+        "calibrate_loadcell_gain",
+        "calibrate_motor_dir",
+        "calibration"
+      ],
+      "successful_reads": {
+        "calibrate_adc_offset": 0.0,
+        "calibrate_angle_offset": 0.0,
+        "calibrate_loadcell_gain": 0.0,
+        "calibrate_motor_dir": 0.0,
+        "calibration": 0.0
+      },
+      "failed_reads": {}
+    },
+    "adc": {
+      "variables_found": 7,
+      "variables_tested": [
+        "ADC_setOffsetTrimAll",
+        "ADC_setVREF",
+        "GPIO_setPadConfig",
+        "HAL_setupADCs",
+        "calibrate_adc_offset"
+      ],
+      "successful_reads": {
+        "ADC_setOffsetTrimAll": 0.0,
+        "ADC_setVREF": 0.0,
+        "GPIO_setPadConfig": 0.0,
+        "HAL_setupADCs": 0.0,
+        "calibrate_adc_offset": 0.0
+      },
+      "failed_reads": {}
+    },
+    "pwm": {
+      "variables_found": 3,
+      "variables_tested": [
+        "EPWM_setEmulationMode",
+        "HAL_setupPWMs",
+        "XBAR_setEPWMMuxConfig"
+      ],
+      "successful_reads": {
+        "EPWM_setEmulationMode": 0.0,
+        "HAL_setupPWMs": 0.0,
+        "XBAR_setEPWMMuxConfig": 0.0
+      },
+      "failed_reads": {}
+    },
+    "control": {
+      "variables_found": 10,
+      "variables_tested": [
+        "EST_doCurrentCtrl",
+        "EST_doSpeedCtrl",
+        "HAL_enableCtrlInts",
+        "imu_ctrl_registers",
+        "initMotor1CtrlParameters"
+      ],
+      "successful_reads": {
+        "EST_doCurrentCtrl": 0.0,
+        "EST_doSpeedCtrl": 0.0,
+        "HAL_enableCtrlInts": 0.0,
+        "imu_ctrl_registers": 0.0,
+        "initMotor1CtrlParameters": 0.0
+      },
+      "failed_reads": {}
+    },
+    "communication": {
+      "variables_found": 23,
+      "variables_tested": [
+        "HAL_disableEncoderSPI",
+        "SPI_clearInterruptStatus",
+        "SPI_enableInterrupt",
+        "SPI_setBaudRate",
+        "SPI_setConfig"
+      ],
+      "successful_reads": {
+        "HAL_disableEncoderSPI": 0.0,
+        "SPI_clearInterruptStatus": 0.0,
+        "SPI_enableInterrupt": 0.0,
+        "SPI_setBaudRate": 0.0,
+        "SPI_setConfig": 0.0
+      },
+      "failed_reads": {}
+    }
+  },
+  "monitoring_test": {
+    "success": true,
+    "variables": [
+      "ADC_setOffsetTrimAll",
+      "ADC_setVREF",
+      "ANGLE_GEN_init"
+    ],
+    "data": {}
+  },
+  "test_end": "2025-08-25T22:29:34.177671"
+}
