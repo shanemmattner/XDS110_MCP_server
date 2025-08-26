@@ -150,15 +150,31 @@ Plotly Dash interface (`src/ui/`):
 - Legacy DSS script integration for reliable data
 
 ### Current Status (Latest Update)
-- **Dashboard**: ✅ Running on port 8051
+- **Dashboard**: ✅ Running on port 8051 (legacy), 8052 (API test dashboard)
 - **Hardware**: ✅ Connected with XDS110 + TMS320F280039C
 - **Variables**: ✅ 924 variables discovered from MAP
 - **Data Flow**: ✅ Real motor data confirmed via legacy scripts
 - **Battery**: ✅ Connected for encoder position reading
-- **Issue**: Dashboard variable dropdown not showing motorVars_M1 or debug_bypass (investigation needed)
+- **API Server**: ✅ Flexible REST API on port 5001 reading REAL hardware values
+- **Confirmed Working**: PC register = 4184996, Memory 0xC000 = 49152
+
+## API System Architecture
+
+### Flexible Variable API (Port 5001)
+- **Endpoint**: `GET /api/read/<variable>` - Read any variable or memory address
+- **Endpoint**: `POST /api/read` - Read multiple variables in one request
+- **Backend**: Uses `api_read_variable.js` DSS script with command-line arguments
+- **Performance**: 15-second timeout for DSS operations
+- **Tested**: Successfully reading PC register and memory addresses
+
+### Test Dashboard (Port 8052)
+- Simple Dash interface for testing API
+- Quick buttons for common variables
+- Custom variable input field
+- Real-time status indicator
 
 ## Next Steps
-- Debug variable visibility in dashboard dropdown
-- Verify structured variable name handling in UI
-- Test real-time monitoring with battery-connected encoder
-- Optimize monitoring rate and error handling
+- Load firmware to enable motorVars_M1 variable reading
+- Test structured variable access (motorVars_M1.motorState)
+- Optimize DSS connection time for faster reads
+- Add caching layer for frequently accessed variables
