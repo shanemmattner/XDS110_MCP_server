@@ -14,6 +14,13 @@ function main() {
         debugSession = ds.openSession("*", "C28xx_CPU1");
         debugSession.target.connect();
         
+        // Always try to load firmware (it's fast if already loaded)
+        try {
+            debugSession.memory.loadProgram("/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.out");
+        } catch (e) {
+            // Firmware may already be loaded - this is fine
+        }
+        
         // Try to halt if running
         try {
             debugSession.target.halt();
@@ -25,6 +32,7 @@ function main() {
         var args = arguments;
         for (var i = 0; i < args.length; i++) {
             var varName = args[i];
+            if (varName == "--load-firmware") continue; // Skip flag if present
             try {
                 var value = debugSession.expression.evaluate(varName);
                 print("VAR_READ:" + varName + "=" + value);
