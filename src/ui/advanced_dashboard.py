@@ -33,6 +33,9 @@ logger = logging.getLogger(__name__)
 # Create Dash app with Bootstrap theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], title="XDS110 Advanced Debug Dashboard")
 
+# Global state for hardware initialization
+hardware_initialized = False
+
 # Predefined struct field mappings for common motor structures
 STRUCT_FIELDS = {
     'motorVars_M1': [
@@ -245,6 +248,12 @@ app.layout = dbc.Container([
 )
 def update_connection_and_variables(n):
     """Update connection status and available variables"""
+    global hardware_initialized
+    
+    # Don't try to get variables until hardware is initialized
+    if not hardware_initialized:
+        return dbc.Alert("🔄 Initializing hardware connection...", color="info"), []
+    
     variables = get_available_variables()
     
     if variables:
@@ -613,6 +622,10 @@ def main():
     logger.info("Initializing XDS110 connection...")
     if initialize_hardware(str(ccxml_path), str(map_path), str(binary_path) if binary_path else None):
         logger.info("✅ Hardware initialized successfully")
+        
+        # Set global flag so callbacks know hardware is ready
+        global hardware_initialized
+        hardware_initialized = True
         
         # Run the advanced dashboard
         logger.info(f"Starting advanced dashboard on http://{args.host}:{args.port}")
