@@ -35,83 +35,24 @@ class VariableReader:
         self.binary_path = "/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.out"
         
     def create_read_script(self, variable_names: List[str]) -> str:
-        """Create a custom DSS script to read specific variables"""
-        script = f"""// Auto-generated DSS script for variable reading
-importPackage(Packages.com.ti.debug.engine.scripting);
-importPackage(Packages.com.ti.ccstudio.scripting.environment);
-importPackage(Packages.java.lang);
-
-function main() {{
-    var debugSession = null;
-    var results = {{}};
-    
-    try {{
-        // Connect to target
-        var ds = ScriptingEnvironment.instance().getServer("DebugServer.1");
-        ds.setConfig("{self.ccxml_path}");
-        
-        debugSession = ds.openSession("*", "C28xx_CPU1");
-        debugSession.target.connect();
-        
-        // Load firmware if needed
-        try {{
-            debugSession.memory.loadProgram("{self.binary_path}");
-        }} catch (e) {{
-            // Firmware may already be loaded
-        }}
-        
-        // Halt target for reading
-        try {{
-            debugSession.target.halt();
-        }} catch (e) {{
-            // Target may already be halted
-        }}
-        
-        // Read requested variables
-"""
-        
-        for var_name in variable_names:
-            script += f"""
-        try {{
-            var value = debugSession.expression.evaluate("{var_name}");
-            print("VAR_READ:{var_name}=" + value);
-        }} catch (e) {{
-            print("VAR_ERROR:{var_name}=" + e.message);
-        }}
-"""
-        
-        script += """
-    } catch (e) {
-        print("SCRIPT_ERROR:" + e.message);
-    } finally {
-        if (debugSession != null) {
-            try {
-                debugSession.target.disconnect();
-                debugSession.terminate();
-            } catch (e) {
-                // Ignore cleanup errors
-            }
-        }
-    }
-}
-
-main();
-"""
-        return script
+        """Use the pre-made API script with arguments"""
+        # We'll use the api_read_variable.js script with arguments instead
+        return None  # Not used anymore
     
     def read_variables(self, variable_names: List[str]) -> Dict[str, Any]:
         """Read multiple variables from the target"""
-        # Create temporary script
-        script_content = self.create_read_script(variable_names)
-        TEMP_SCRIPT.write_text(script_content)
+        # Use the api_read_variable.js script with arguments
+        script_path = SCRIPTS_DIR / "api_read_variable.js"
         
-        # Execute DSS script
+        # Execute DSS script with variable names as arguments
+        cmd = [DSS_PATH, str(script_path)] + variable_names
+        
         try:
             result = subprocess.run(
-                [DSS_PATH, str(TEMP_SCRIPT)],
+                cmd,
                 capture_output=True,
                 text=True,
-                timeout=10,
+                timeout=15,  # Give DSS more time
                 cwd=str(SCRIPTS_DIR)
             )
             
