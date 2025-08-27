@@ -126,7 +126,7 @@ def read_variable(motor_clicks, pos_clicks, current_clicks, debug_clicks, custom
     
     # Call API
     try:
-        response = requests.get(f"{API_URL}/api/read/{variable}", timeout=10)
+        response = requests.get(f"{API_URL}/api/read/{variable}", timeout=30)
         data = response.json()
         
         if data.get('success'):

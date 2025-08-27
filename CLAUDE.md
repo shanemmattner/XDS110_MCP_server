@@ -156,7 +156,9 @@ Plotly Dash interface (`src/ui/`):
 - **Data Flow**: ✅ Real motor data confirmed via legacy scripts
 - **Battery**: ✅ Connected for encoder position reading
 - **API Server**: ✅ Flexible REST API on port 5001 reading REAL hardware values
-- **Confirmed Working**: PC register = 4184996, Memory 0xC000 = 49152
+- **Absolute Encoder**: ✅ Successfully reading motorVars_M1.absPosition_rad with live values
+- **Confirmed Working**: PC=4184996, Memory=49152, Encoder position changing (4→0→1 radians)
+- **Issue**: Encoder precision showing exactly 1.0 radians (impossible - needs investigation)
 
 ## API System Architecture
 

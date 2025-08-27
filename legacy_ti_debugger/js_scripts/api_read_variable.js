@@ -17,15 +17,15 @@ function main() {
         // Always try to load firmware (it's fast if already loaded)
         try {
             debugSession.memory.loadProgram("/home/shane/Desktop/skip_repos/skip/robot/core/embedded/firmware/obake/Flash_lib_DRV8323RH_3SC/obake_firmware.out");
-        } catch (e) {
-            // Firmware may already be loaded - this is fine
-        }
-        
-        // Try to halt if running
-        try {
+            // Run the firmware briefly to initialize variables
+            debugSession.target.runAsynch();
+            java.lang.Thread.sleep(200);
             debugSession.target.halt();
         } catch (e) {
-            // May already be halted
+            // Firmware may already be loaded - try to halt anyway
+            try {
+                debugSession.target.halt();
+            } catch (e2) {}
         }
         
         // Read variables passed as arguments
@@ -35,7 +35,13 @@ function main() {
             if (varName == "--load-firmware") continue; // Skip flag if present
             try {
                 var value = debugSession.expression.evaluate(varName);
-                print("VAR_READ:" + varName + "=" + value);
+                // Force more precision for floating point values
+                if (value.toString().indexOf('.') !== -1 || varName.indexOf('Position') !== -1 || varName.indexOf('angle') !== -1) {
+                    // For position/angle values, print with more precision
+                    print("VAR_READ:" + varName + "=" + java.text.DecimalFormat("0.######").format(value));
+                } else {
+                    print("VAR_READ:" + varName + "=" + value);
+                }
             } catch (e) {
                 // Try reading as memory address if variable fails
                 try {

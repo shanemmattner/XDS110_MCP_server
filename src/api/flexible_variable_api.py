@@ -52,7 +52,7 @@ class VariableReader:
                 cmd,
                 capture_output=True,
                 text=True,
-                timeout=15,  # Give DSS more time
+                timeout=25,  # Give DSS more time for firmware loading
                 cwd=str(SCRIPTS_DIR)
             )
             
@@ -66,12 +66,9 @@ class VariableReader:
                     if match:
                         var_name = match.group(1)
                         var_value = match.group(2)
-                        # Try to parse as number
+                        # Try to parse as number - always try float first for precision
                         try:
-                            if '.' in var_value:
-                                variables[var_name] = float(var_value)
-                            else:
-                                variables[var_name] = int(var_value)
+                            variables[var_name] = float(var_value)
                         except:
                             variables[var_name] = var_value
                             
